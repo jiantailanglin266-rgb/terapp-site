@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="index,follow">
+<title>商品一覧｜TERAPP</title>
+<meta name="description" content="TERAPPの商品一覧。美容用リフトアップパッチ、コンディショニングテープなど、毎日の美容とコンディショニングに新しい選択を。">
+<meta name="theme-color" content="#FFF4F7">
+<link rel="canonical" href="https://TERAPP-DOMAIN-TBD/products">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TERAPP">
+<meta property="og:title" content="商品一覧｜TERAPP">
+<meta property="og:description" content="毎日の美容とコンディショニングに、新しい選択を。TERAPPの商品一覧。">
+<meta property="og:url" content="https://TERAPP-DOMAIN-TBD/products">
+<meta property="og:image" content="https://TERAPP-DOMAIN-TBD/assets/ogp/terapp-ogp.webp">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="商品一覧｜TERAPP">
+<meta name="twitter:description" content="毎日の美容とコンディショニングに、新しい選択を。">
+<meta name="twitter:image" content="https://TERAPP-DOMAIN-TBD/assets/ogp/terapp-ogp.webp">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Shippori+Mincho:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/terapp.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://TERAPP-DOMAIN-TBD/"},{"@type":"ListItem","position":2,"name":"商品一覧","item":"https://TERAPP-DOMAIN-TBD/products"}]}
+</script>
+<style>
+.filter-bar{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.4rem}
+.filter-btn{font-family:var(--sans);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;background:#fff;border:1.5px solid var(--line-rose);color:var(--muted);border-radius:50px;padding:.6rem 1.4rem;cursor:pointer;transition:all .3s}
+.filter-btn[aria-pressed="true"]{background:linear-gradient(135deg,var(--rose),var(--deep));color:#fff;border-color:transparent}
+</style>
+<script>window.TERAPP_PAGE = { id:'products', feathers:'high', breadcrumb:[{name:'商品一覧'}] };</script>
+</head>
+<body>
+<noscript><nav style="padding:1rem;text-align:center"><a href="index.html">ホーム</a> ｜ <a href="product-lift-up-patch.html">Lift Up Patch</a> ｜ <a href="product-conditioning-tape.html">Conditioning Tape</a> ｜ <a href="contact.html">お問い合わせ</a></nav></noscript>
+
+<section class="page-hero">
+  <p class="ph-eyebrow eyebrow">Products</p>
+  <h1>Products</h1>
+  <p class="ph-sub">毎日の美容とコンディショニングに、<br>新しい選択を。</p>
+  <div class="s-line"></div>
+</section>
+<div id="breadcrumbs"></div>
+
+<main id="main">
+<section class="section" style="background:linear-gradient(180deg,#fff,#FFF9FB)">
+  <div class="wrap">
+    <div class="filter-bar" role="group" aria-label="カテゴリーで絞り込み">
+      <button class="filter-btn" data-filter="all" aria-pressed="true">All</button>
+      <button class="filter-btn" data-filter="beauty" aria-pressed="false">Beauty</button>
+      <button class="filter-btn" data-filter="conditioning" aria-pressed="false">Conditioning</button>
+      <button class="filter-btn" data-filter="sports" aria-pressed="false">Sports</button>
+    </div>
+    <div class="product-grid" id="product-grid"></div>
+    <p class="form-note" style="margin-top:2.4rem">※価格の税込区分・送料・販売単位・発売時期は公開前に確定情報へ更新します。存在しない在庫・レビューは表示しません。</p>
+  </div>
+</section>
+
+<section class="section" style="background:var(--soft)">
+  <div class="wrap-narrow center">
+    <div class="sec-head reveal"><span class="eyebrow">Support</span><h2 class="sec-title">商品について、<br>お気軽にお問い合わせください。</h2><div class="s-line"></div></div>
+    <div class="final-actions reveal" data-d="1">
+      <a href="contact.html" class="btn btn-primary" data-ev="contact_start">お問い合わせ</a>
+      <a href="faq.html" class="btn btn-ghost">よくある質問</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<script src="data/products.js" defer></script>
+<script src="assets/terapp.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var PRODUCTS = window.TERAPP_PRODUCTS||[];
+  var grid = document.getElementById('product-grid');
+  var STATUS = {'available':['available','Available'],'coming-soon':['coming','Coming Soon'],'sold-out':['','Sold Out'],'discontinued':['','販売終了']};
+  var PH = '<svg class="pm-ph" viewBox="0 0 120 150" style="display:none" aria-hidden="true"><rect x="24" y="16" width="72" height="118" rx="16" fill="none" stroke="#E99AAD" stroke-width="2"/><ellipse cx="60" cy="66" rx="26" ry="18" fill="none" stroke="#C9A86A" stroke-width="2"/></svg>';
+  function render(filter){
+    grid.innerHTML='';
+    var list = PRODUCTS.filter(function(p){ return filter==='all' || p.category.indexOf(filter)>-1; });
+    if(!list.length){ grid.innerHTML='<p class="journal-empty">該当する商品は準備中です。</p>'; return; }
+    list.forEach(function(p,i){
+      var st = STATUS[p.status]||['',''];
+      var actionLabel = p.status==='available' ? '詳細を見る' : '詳細を見る';
+      var priceHTML = p.price ? (p.price.toLocaleString('ja-JP')+'<small>円〜</small>') : '<small>'+p.priceLabel+'</small>';
+      grid.insertAdjacentHTML('beforeend',
+        '<a class="product-card reveal" '+(i?'data-d="'+Math.min(i,3)+'"':'')+' href="'+p.slug+'" data-ev="product_detail_view" style="text-decoration:none">'+
+          '<div class="product-media">'+
+            (st[0]?'<span class="product-status '+st[0]+'">'+st[1]+'</span>':'<span class="product-status">'+st[1]+'</span>')+
+            '<img src="'+p.image+'" alt="'+p.name+'" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'block\';">'+PH+
+          '</div>'+
+          '<div class="product-body">'+
+            '<span class="product-cat">'+p.catLabel+'</span>'+
+            '<h3>'+p.name+'</h3><p class="p-jp">'+p.japaneseName+'</p>'+
+            '<p class="p-desc">'+p.shortDescription+'</p>'+
+            '<div class="product-price">'+priceHTML+'</div>'+
+            '<div class="product-actions"><span class="btn '+(p.status==='available'?'btn-primary':'btn-ghost')+' sm">'+actionLabel+'</span></div>'+
+          '</div>'+
+        '</a>');
+    });
+    // re-run reveal for freshly added
+    grid.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+  }
+  render('all');
+  document.querySelectorAll('.filter-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.filter-btn').forEach(function(b){ b.setAttribute('aria-pressed', b===btn); });
+      render(btn.getAttribute('data-filter'));
+    });
+  });
+});
+</script>
+</body>
+</html>

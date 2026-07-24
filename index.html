@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="index,follow">
+<title>TERAPP｜テラヘルツの可能性を美容とコンディショニングへ</title>
+<meta name="description" content="TERAPPは、テラヘルツ波の可能性に着目し、毎日の美容、健康、スポーツを意識した製品を提案するブランドです。美容用リフトアップパッチやコンディショニングテープをご紹介します。">
+<meta name="author" content="TERAPP">
+<meta name="theme-color" content="#FFF4F7">
+<!-- TODO(公開前): 正式ドメイン確定後に canonical / og:url / og:image を実ドメインへ更新 -->
+<link rel="canonical" href="https://TERAPP-DOMAIN-TBD/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TERAPP">
+<meta property="og:title" content="TERAPP｜テラヘルツの可能性を美容とコンディショニングへ">
+<meta property="og:description" content="目に見えない力で、毎日のコンディションを整える。テラヘルツの可能性を、美容とコンディショニングへ。">
+<meta property="og:url" content="https://TERAPP-DOMAIN-TBD/">
+<meta property="og:image" content="https://TERAPP-DOMAIN-TBD/assets/ogp/terapp-ogp.webp">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TERAPP｜テラヘルツの可能性を美容とコンディショニングへ">
+<meta name="twitter:description" content="目に見えない力で、毎日のコンディションを整える。">
+<meta name="twitter:image" content="https://TERAPP-DOMAIN-TBD/assets/ogp/terapp-ogp.webp">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Shippori+Mincho:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/terapp.css">
+
+<!-- ===== Structured Data ===== -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"TERAPP","url":"https://TERAPP-DOMAIN-TBD/","logo":"https://TERAPP-DOMAIN-TBD/assets/favicon.svg","description":"テラヘルツ波の可能性に着目し、美容・健康・スポーツを意識した製品を提案するブランド。","address":{"@type":"PostalAddress","postalCode":"124-0021","addressRegion":"東京都","addressLocality":"葛飾区","streetAddress":"細田4-29-1","addressCountry":"JP"},"telephone":"+81-90-3694-1101"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"TERAPP","url":"https://TERAPP-DOMAIN-TBD/","inLanguage":"ja"}
+</script>
+
+<style>
+/* ---- Top page specific ---- */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;overflow:hidden;
+  padding:calc(var(--header-h) + 3rem) 1.5rem 4rem;isolation:isolate;
+  background:radial-gradient(120% 90% at 50% 25%,#FFFFFF 0%,#FFF9FB 45%,#FFF1F5 100%)}
+.hero-inner{position:relative;z-index:5;display:flex;flex-direction:column;align-items:center;text-align:center;max-width:920px}
+.hero [data-h]{opacity:0}
+.hero-eyebrow{margin-bottom:1.4rem}
+.hero h1{font-family:var(--jp-serif);font-weight:600;color:var(--text);font-size:clamp(2rem,6vw,4rem);line-height:1.3;letter-spacing:.04em}
+.hero-sub{margin-top:1.6rem;font-size:clamp(.92rem,2.4vw,1.08rem);color:var(--muted);line-height:2}
+.hero-en{margin-top:1.4rem;font-family:var(--serif);font-size:clamp(1rem,2.6vw,1.4rem);letter-spacing:.24em;color:var(--gold)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.9rem;justify-content:center;margin-top:2.4rem}
+.stage{position:relative;width:min(72vw,360px);aspect-ratio:1/1;margin:1rem auto 1.6rem;display:grid;place-items:center}
+.stage-glow{position:absolute;inset:12%;border-radius:50%;background:radial-gradient(closest-side,rgba(255,244,247,.9),rgba(252,229,236,.5) 60%,transparent 75%);filter:blur(6px);z-index:0}
+.ring{position:absolute;border-radius:50%}
+.ring.r1{inset:6%;background:radial-gradient(closest-side,transparent 78%,rgba(233,154,173,.28) 92%,transparent 100%);animation:ringSpin 22s linear infinite}
+.ring.r2{inset:16%;background:radial-gradient(closest-side,transparent 74%,rgba(201,168,106,.30) 90%,transparent 100%);animation:ringSpin 30s linear infinite reverse}
+.ring.r3{inset:-4%;background:radial-gradient(closest-side,transparent 82%,rgba(233,154,173,.16) 94%,transparent 100%);animation:ringSpin 40s linear infinite}
+@keyframes ringSpin{to{transform:rotate(360deg)}}
+.product{position:relative;z-index:3;width:62%;animation:floatY 6s ease-in-out infinite;filter:drop-shadow(0 24px 40px rgba(184,95,120,.22))}
+@keyframes floatY{0%,100%{transform:translateY(-2%)}50%{transform:translateY(3%)}}
+.product-ph{width:100%;aspect-ratio:3/4;border-radius:26px;background:linear-gradient(160deg,#fff,#FFF4F7 60%,#FCE5EC);border:1px solid var(--line);box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;padding:1.5rem}
+.product-ph svg{width:46%;opacity:.55}
+.product-ph .ph-label{font-family:var(--sans);font-size:.56rem;letter-spacing:.22em;color:var(--gold);text-transform:uppercase}
+.product-ph .ph-name{font-family:var(--serif);font-size:1rem;color:var(--deep);letter-spacing:.05em}
+.scroll-cue{position:absolute;bottom:1.6rem;left:50%;transform:translateX(-50%);z-index:5;display:flex;flex-direction:column;align-items:center;gap:.5rem;opacity:0}
+.scroll-cue .txt{font-family:var(--sans);font-size:.55rem;letter-spacing:.34em;color:var(--gold)}
+.scroll-cue .bar{width:1px;height:46px;background:linear-gradient(var(--gold),transparent);position:relative;overflow:hidden}
+.scroll-cue .bar::after{content:"";position:absolute;top:-50%;left:0;width:100%;height:50%;background:var(--gold);animation:scrollDot 2.2s var(--ease) infinite}
+@keyframes scrollDot{0%{top:-50%}60%,100%{top:100%}}
+.intro-lines p{opacity:0;transform:translateY(20px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.intro-lines p.in{opacity:1;transform:none}
+.featured-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.6rem;margin-top:2.6rem}
+.tilt{transition:transform .3s var(--ease)}
+@media(prefers-reduced-motion:reduce){.hero [data-h],.scroll-cue{opacity:1!important}.product{animation:none}.intro-lines p{opacity:1!important;transform:none!important}}
+@media(max-width:520px){.hero-cta{flex-direction:column;width:100%;max-width:300px}.hero-cta .btn{width:100%}}
+</style>
+
+<script>window.TERAPP_PAGE = { id:'home', feathers:'high' };</script>
+</head>
+<body>
+<noscript><nav style="padding:1rem;text-align:center;font-family:sans-serif"><a href="concept.html">コンセプト</a> ｜ <a href="products.html">商品一覧</a> ｜ <a href="technology.html">テクノロジー</a> ｜ <a href="how-to-use.html">使い方</a> ｜ <a href="journal.html">ニュース</a> ｜ <a href="faq.html">FAQ</a> ｜ <a href="contact.html">お問い合わせ</a></nav></noscript>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" aria-label="TERAPP メインビジュアル">
+  <div class="hero-inner">
+    <p class="hero-eyebrow eyebrow" data-h="1">The Invisible Possibility</p>
+    <div class="stage" data-h="2" aria-hidden="true">
+      <div class="stage-glow"></div>
+      <span class="ring r3"></span><span class="ring r1"></span><span class="ring r2"></span>
+      <div class="product">
+        <img src="images/home/hero-main.webp" alt="TERAPP 商品イメージ" width="360" height="480" fetchpriority="high"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="product-ph" style="display:none">
+          <svg viewBox="0 0 120 150" aria-hidden="true"><defs><linearGradient id="phg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E99AAD"/><stop offset="1" stop-color="#C9A86A"/></linearGradient></defs><rect x="18" y="14" width="84" height="122" rx="20" fill="none" stroke="url(#phg)" stroke-width="2.5"/><ellipse cx="60" cy="66" rx="30" ry="22" fill="none" stroke="url(#phg)" stroke-width="2"/><circle cx="60" cy="66" r="7" fill="url(#phg)"/></svg>
+          <span class="ph-label">Brand Visual</span><span class="ph-name">TERAPP</span>
+        </div>
+      </div>
+    </div>
+    <h1 data-h="3">美しさは、<br>目に見えないところから。</h1>
+    <p class="hero-sub" data-h="4">テラヘルツの可能性を、<br>毎日の美容とコンディショニングへ。</p>
+    <p class="hero-en" data-h="5">THE INVISIBLE POSSIBILITY</p>
+    <div class="hero-cta" data-h="6">
+      <a href="products.html" class="btn btn-primary" data-ev="hero_product_click">商品を見る</a>
+      <a href="concept.html" class="btn btn-ghost" data-ev="concept_click">ブランドについて</a>
+    </div>
+  </div>
+  <div class="scroll-cue"><span class="txt">SCROLL</span><span class="bar"></span></div>
+</section>
+
+<!-- ============ DUAL MARQUEE ============ -->
+<div class="marquee-band" aria-hidden="true">
+  <div class="marquee row1"><div class="mq-track ltr" id="mq1"></div></div>
+  <div class="marquee row2"><div class="mq-track rtl" id="mq2"></div></div>
+</div>
+
+<!-- ============ BRAND INTRODUCTION ============ -->
+<section class="section" style="background:linear-gradient(180deg,#fff,#FFF9FB)">
+  <div class="wrap-narrow center">
+    <div class="sec-head reveal">
+      <span class="eyebrow">The Invisible Possibility.</span>
+      <h2 class="sec-title">目に見えない力で、<br>毎日のコンディションを整える。</h2>
+      <div class="s-line"></div>
+    </div>
+    <div class="intro-lines">
+      <p class="lead">TERAPPは、テラヘルツ波の可能性に着目し、美容、健康、スポーツなど、</p>
+      <p class="lead">日常生活の中で取り入れやすい製品づくりを目指すブランドです。</p>
+      <p class="lead" style="margin-top:1.2rem;color:var(--deep);font-family:var(--jp-serif)">誰でも。いつでも。どこでも。</p>
+      <p class="lead muted" style="margin-top:1.2rem">毎日の小さな習慣から、あなた本来のコンディションへ。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED PRODUCTS ============ -->
+<section class="section" style="background:var(--soft)" id="featured">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Featured Products</span>
+      <h2 class="sec-title"><span class="en">Featured Products</span></h2>
+      <div class="s-line"></div>
+    </div>
+    <div class="featured-grid">
+      <a class="product-card tilt reveal" href="product-lift-up-patch.html" data-ev="product_detail_view" style="text-decoration:none">
+        <div class="product-media">
+          <span class="product-status available">Available</span>
+          <img src="images/products/lift-up-patch.webp" alt="TERAPP Lift Up Patch" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <svg class="pm-ph" viewBox="0 0 120 150" style="display:none" aria-hidden="true"><rect x="18" y="14" width="84" height="122" rx="20" fill="none" stroke="#E99AAD" stroke-width="2"/><ellipse cx="60" cy="66" rx="28" ry="20" fill="none" stroke="#C9A86A" stroke-width="2"/></svg>
+        </div>
+        <div class="product-body">
+          <span class="product-cat">Beauty</span>
+          <h3>TERAPP Lift Up Patch</h3>
+          <p class="p-jp">テラップ リフトアップパッチ</p>
+          <p class="p-desc">フェイスライン、頬、首元、デコルテなど、印象が気になる部分に使用する美容ケア用パッチ。</p>
+          <div class="product-price">2,200円<small>〜（1セット）</small></div>
+          <div class="product-actions"><span class="btn btn-primary sm">詳細を見る</span></div>
+        </div>
+      </a>
+      <a class="product-card tilt reveal" data-d="1" href="product-conditioning-tape.html" data-ev="conditioning_tape_click" style="text-decoration:none">
+        <div class="product-media">
+          <span class="product-status coming">Coming Soon</span>
+          <img src="images/products/conditioning-tape.webp" alt="TERAPP Conditioning Tape" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <svg class="pm-ph" viewBox="0 0 120 150" style="display:none" aria-hidden="true"><rect x="30" y="20" width="60" height="110" rx="10" fill="none" stroke="#C9A86A" stroke-width="2"/><path d="M40 45h40M40 65h40M40 85h40" stroke="#E99AAD" stroke-width="2"/></svg>
+        </div>
+        <div class="product-body">
+          <span class="product-cat">Conditioning / Sports</span>
+          <h3>TERAPP Conditioning Tape</h3>
+          <p class="p-jp">テラヘルツ コンディショニングテープ</p>
+          <p class="p-desc">日常生活からスポーツシーンまで、気になる部分へ貼って使用するコンディショニングテープ。</p>
+          <div class="product-price"><small>価格・仕様は準備中です</small></div>
+          <div class="product-actions"><span class="btn btn-ghost sm">詳細を見る</span></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BRAND MOVIE ============ -->
+<section class="section" style="background:#fff">
+  <div class="wrap reveal">
+    <div class="video-band">
+      <video muted playsinline preload="none" poster="images/home/brand-story-poster.webp">
+        <source src="videos/terapp-brand-story.mp4" type="video/mp4">
+      </video>
+      <div class="video-ph" aria-hidden="true" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="#E4CFA3" stroke-width="1.4"><circle cx="12" cy="12" r="10"/><path d="M10 8l6 4-6 4z" fill="#E4CFA3" stroke="none"/></svg></div>
+      <div class="video-overlay">
+        <span class="eyebrow">Beauty in Motion.</span>
+        <h2>光。動き。呼吸。</h2>
+        <p>毎日の中に、新しい美容のリズムを。TERAPPが提案する、これからのセルフケア。</p>
+      </div>
+      <div class="video-ctrl">
+        <button type="button" data-video-play aria-label="動画を再生／一時停止"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></button>
+        <button type="button" data-video-mute aria-label="音声のオン／オフ"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M11 5L6 9H3v6h3l5 4zM16 9a4 4 0 010 6"/></svg></button>
+      </div>
+    </div>
+    <p class="form-note" style="margin-top:1rem">※動画素材は準備中です。読み込めない場合も情報は上記テキストでご確認いただけます。</p>
+  </div>
+</section>
+
+<!-- ============ 3 CATEGORIES ============ -->
+<section class="section" style="background:linear-gradient(180deg,#FFF9FB,#fff)">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Category</span>
+      <h2 class="sec-title">美容・健康・スポーツ、<br>それぞれの毎日へ。</h2>
+      <div class="s-line"></div>
+    </div>
+    <div class="cat-grid">
+      <a class="cat-card reveal" href="beauty.html">
+        <span class="cat-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l2.5 5.5L20 11l-5.5 2.5L12 19l-2.5-5.5L4 11l5.5-2.5z" stroke-linejoin="round"/></svg></span>
+        <span class="cat-en">Beauty</span>
+        <h3>毎日の美容習慣へ。</h3>
+        <p>フェイスライン、頬、首元、デコルテなど、印象を意識した美容ケアをもっと手軽に。</p>
+        <span class="cat-go">View more →</span>
+      </a>
+      <a class="cat-card reveal" data-d="1" href="conditioning.html">
+        <span class="cat-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h4l2-6 4 12 2-6h4" stroke-linejoin="round" stroke-linecap="round"/></svg></span>
+        <span class="cat-en">Conditioning</span>
+        <h3>日常の動きを、もっと快適に。</h3>
+        <p>仕事、家事、外出、スポーツなど、毎日のコンディショニングを意識する習慣へ。</p>
+        <span class="cat-go">View more →</span>
+      </a>
+      <a class="cat-card reveal" data-d="2" href="technology.html">
+        <span class="cat-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2" stroke-linecap="round"/></svg></span>
+        <span class="cat-en">Technology</span>
+        <h3>目に見えない可能性。</h3>
+        <p>テラヘルツ波の一般的な特徴と、TERAPPが技術へ向き合う考え方をご紹介します。</p>
+        <span class="cat-go">View more →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TECHNOLOGY PREVIEW ============ -->
+<section class="section" style="background:#fff;position:relative;overflow:hidden">
+  <div class="wrap-narrow reveal">
+    <div class="sec-head">
+      <span class="eyebrow">Technology</span>
+      <h2 class="sec-title"><span class="en">What is Terahertz?</span></h2>
+      <div class="s-line left"></div>
+    </div>
+    <p class="lead">テラヘルツ波は、一般に電波と赤外線の間に位置する周波数帯の電磁波です。通信、分析、センシングなど、さまざまな分野で研究されています。TERAPPは、その可能性に着目し、日常生活の中で取り入れやすい製品づくりを目指しています。</p>
+    <div class="freq-band" aria-hidden="true"><div class="fb-wave"></div><div class="fb-line"></div><span class="fb-label fb-l">電波</span><span class="fb-label fb-c">テラヘルツ</span><span class="fb-label fb-r">赤外線・光</span></div>
+    <div class="thz-note"><p>※一般的なテラヘルツ研究に関する情報であり、本商品固有の効果・効能を示すものではありません。試験データ・認証・届出が確認できない限り、医学的または身体的効果を断定しません。</p></div>
+    <div style="margin-top:2rem"><a href="technology.html" class="btn btn-ghost">テクノロジーを詳しく見る</a></div>
+  </div>
+</section>
+
+<!-- ============ PHILOSOPHY ============ -->
+<section class="section story">
+  <div class="wrap">
+    <span class="eyebrow reveal">Our Philosophy</span>
+    <h2 class="story-big reveal" data-d="1">本来のコンディションを、<br>引き出す。</h2>
+    <p class="reveal" data-d="1">私たちは、人が本来持つ力を大切にしています。美容、健康、スポーツ。それぞれの生活の中に、無理なく取り入れられる製品を通じて、自分らしく過ごせる毎日を支えることを目指します。</p>
+    <div class="beat reveal" data-d="2"><span>誰でも。</span><span>いつでも。</span><span>どこでも。</span></div>
+    <p class="close reveal" data-d="3">テラヘルツの可能性を、もっと身近に。</p>
+    <div style="margin-top:2rem" class="reveal" data-d="3"><a href="concept.html" class="btn btn-ghost">ブランドについて</a></div>
+  </div>
+</section>
+
+<!-- ============ USAGE SCENES ============ -->
+<section class="section" style="background:linear-gradient(180deg,#FFF4F7,#fff)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Usage Scenes</span>
+      <h2 class="sec-title">わたしの時間に、<br>そっと寄り添う。</h2>
+      <div class="s-line left"></div>
+    </div>
+    <div class="hscroll">
+      <div class="hscene"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2" stroke-linecap="round"/></svg></span><b>朝のスキンケア</b><span>一日の始まりに</span></div>
+      <div class="hscene"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 4l1.5 3L17 8l-2.5 2 .5 3.5L12 12l-3 1.5.5-3.5L7 8l3.5-1z" stroke-linejoin="round"/></svg></span><b>メイク前</b><span>身支度の時間に</span></div>
+      <div class="hscene"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="12" rx="1.5"/><path d="M8 21h8" stroke-linecap="round"/></svg></span><b>在宅ワーク</b><span>ながらケアに</span></div>
+      <div class="hscene"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z" stroke-linejoin="round"/></svg></span><b>リラックスタイム</b><span>夜のひとときに</span></div>
+      <div class="hscene"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h4l2-6 4 12 2-6h4" stroke-linejoin="round" stroke-linecap="round"/></svg></span><b>スポーツ前後</b><span>コンディショニングに</span></div>
+      <div class="hscene"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21V9l9-6 9 6v12" stroke-linejoin="round"/></svg></span><b>旅行</b><span>持ち運びやすく</span></div>
+      <div class="hscene"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z" stroke-linejoin="round"/></svg></span><b>特別な日</b><span>大切な予定の前に</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JOURNAL PREVIEW ============ -->
+<section class="section" style="background:#fff">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Journal</span>
+      <h2 class="sec-title">ニュース・コラム</h2>
+      <div class="s-line"></div>
+    </div>
+    <div class="journal-grid" id="journal-preview"></div>
+    <div class="center" style="margin-top:2.4rem"><a href="journal.html" class="btn btn-ghost" data-ev="journal_open">記事一覧を見る</a></div>
+  </div>
+</section>
+
+<!-- ============ SOCIAL ============ -->
+<section class="section" style="background:var(--soft)">
+  <div class="wrap-narrow center">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Follow the Beauty.</span>
+      <h2 class="sec-title">SNSでも発信しています。</h2>
+      <div class="s-line"></div>
+    </div>
+    <p class="lead muted reveal" data-d="1">TERAPPの最新情報、使用イメージ、美容習慣をSNSで発信しています。</p>
+    <div class="social-strip reveal" data-d="1" id="social-strip"></div>
+    <p class="form-note reveal" data-d="2" style="margin-top:1.6rem">※公式SNSアカウントURLは準備中です。開設後にリンクを掲載します。</p>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="section final">
+  <div class="wrap">
+    <h2 class="final-big reveal">美しさは、<br>毎日の小さな習慣から。</h2>
+    <p class="final-sub reveal" data-d="1">TERAPPという、新しい選択を。</p>
+    <div class="final-actions reveal" data-d="2">
+      <a href="products.html" class="btn btn-primary" data-ev="purchase_click">商品を見る</a>
+      <a href="contact.html" class="btn btn-ghost" data-ev="contact_start">お問い合わせ</a>
+    </div>
+    <p class="final-note reveal" data-d="2">※使用感や感じ方には個人差があります。</p>
+  </div>
+</section>
+
+</main>
+
+<script src="assets/terapp.js" defer></script>
+<script>
+/* Top page: intro line stagger + journal preview + social strip + tilt */
+document.addEventListener('DOMContentLoaded', function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Hero entrance */
+  if(!reduce){
+    document.querySelectorAll('.hero [data-h]').forEach(function(elm){
+      var i = parseInt(elm.getAttribute('data-h'),10);
+      setTimeout(function(){ elm.style.transition='opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1)'; elm.style.opacity=1; elm.style.transform='none'; }, 300 + i*130);
+    });
+    setTimeout(function(){ var c=document.querySelector('.scroll-cue'); if(c) c.style.opacity=1; }, 1400);
+  } else {
+    document.querySelectorAll('.hero [data-h]').forEach(function(e){e.style.opacity=1;});
+  }
+
+  /* Intro line-by-line reveal */
+  if('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){
+      var ps = en.target.querySelectorAll('p');
+      ps.forEach(function(p,idx){ setTimeout(function(){ p.classList.add('in'); }, idx*180); });
+      io.unobserve(en.target);
+    }}); }, {threshold:.3});
+    var il = document.querySelector('.intro-lines'); if(il) io.observe(il);
+  } else { document.querySelectorAll('.intro-lines p').forEach(function(p){p.classList.add('in');}); }
+
+  /* Journal preview (top 3 from shared data if available) */
+  var JOURNAL = (window.TERAPP_JOURNAL||[]).slice(0,3);
+  var grid = document.getElementById('journal-preview');
+  if(grid){
+    if(!JOURNAL.length){ grid.innerHTML = '<p class="journal-empty">記事は準備中です。</p>'; }
+    JOURNAL.forEach(function(a){
+      grid.insertAdjacentHTML('beforeend',
+        '<a class="journal-card reveal" href="'+a.href+'"><div class="journal-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="#E99AAD" stroke-width="1.2" aria-hidden="true"><path d="M4 5h16v14H4z"/><path d="M4 9h16M9 5v14"/></svg></div><div class="journal-body"><div class="journal-meta"><span class="journal-cat">'+a.cat+'</span><span class="journal-date">'+a.date+'</span></div><h3>'+a.title+'</h3><p>'+a.excerpt+'</p><span class="read">Read more →</span></div></a>');
+    });
+  }
+
+  /* Social strip from shared config */
+  var S = window.TERAPP_SOCIAL||{};
+  var ICONS = {
+    instagram:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="22" height="22"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>',
+    tiktok:'<svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M16 3c.3 2.1 1.6 3.7 3.7 4v2.7c-1.4 0-2.7-.4-3.7-1.1v5.9a5.5 5.5 0 11-5.5-5.5c.3 0 .6 0 .9.1v2.8a2.7 2.7 0 102 2.6V3H16z"/></svg>',
+    youtube:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="22" height="22"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5"/><path d="M10 9.2l5 2.8-5 2.8z" fill="currentColor" stroke="none"/></svg>',
+    x:'<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.5 3h3l-6.6 7.5L21.7 21h-5.8l-4.5-5.9L6.1 21H3l7-8L2.7 3h5.9l4.1 5.4zM16.4 19.2h1.6L7.7 4.7H6z"/></svg>',
+    line:'<svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 3C6.9 3 3 6.4 3 10.5c0 3.7 3.1 6.8 7.4 7.4.3.1.7.2.8.5.1.3 0 .7 0 .9l-.1.8c0 .2-.2.9.8.5s5.3-3.1 7.2-5.3c1.3-1.4 1.9-2.9 1.9-4.8C21 6.4 17.1 3 12 3z"/></svg>'
+  };
+  var strip = document.getElementById('social-strip');
+  if(strip){
+    Object.keys(ICONS).forEach(function(k){
+      var url=S[k], hidden=url?'':' hidden';
+      strip.insertAdjacentHTML('beforeend','<a href="'+(url||'#')+'"'+hidden+' target="_blank" rel="noopener noreferrer" data-social="'+k+'" data-ev="sns_click" aria-label="TERAPP '+k+'">'+ICONS[k]+'</a>');
+    });
+  }
+
+  /* Tilt on featured cards (fine pointer only) */
+  if(window.matchMedia('(pointer:fine)').matches && !reduce){
+    document.querySelectorAll('.tilt').forEach(function(card){
+      card.addEventListener('pointermove', function(e){
+        var r=card.getBoundingClientRect();
+        var x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+        card.style.transform='perspective(900px) rotateX('+(-y*4)+'deg) rotateY('+(x*4)+'deg) translateY(-4px)';
+      });
+      card.addEventListener('pointerleave', function(){ card.style.transform=''; });
+    });
+  }
+});
+</script>
+<script src="data/journal.js" defer></script>
+</body>
+</html>
