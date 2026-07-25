@@ -80,6 +80,10 @@ header.thdr.scrolled{background:rgba(8,20,16,.78);backdrop-filter:blur(18px) sat
 .nav a:not(.nav-cta)::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--gold-l);transition:width .3s var(--ease)}
 .nav a:not(.nav-cta):hover,.nav a[aria-current="page"]{color:var(--gold-l)}
 .nav a[aria-current="page"]::after,.nav a:not(.nav-cta):hover::after{width:100%}
+.nav-social{display:flex;align-items:center;gap:.85rem}
+.nav-social a{color:var(--muted);display:grid;place-items:center;transition:transform .3s,color .3s}
+.nav-social a:hover{color:var(--gold-l);transform:translateY(-2px)}
+.nav-social svg{width:17px;height:17px;display:block}
 .nav-cta{
   font-family:var(--sans);font-size:.66rem;letter-spacing:.14em;text-transform:none;font-weight:600;
   background:linear-gradient(135deg,var(--gold-l),var(--deep));color:var(--ink);

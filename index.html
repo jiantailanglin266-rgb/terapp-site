@@ -356,22 +356,9 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   }
 
-  /* Social strip from shared config */
-  var S = window.TERAPP_SOCIAL||{};
-  var ICONS = {
-    instagram:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="22" height="22"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>',
-    tiktok:'<svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M16 3c.3 2.1 1.6 3.7 3.7 4v2.7c-1.4 0-2.7-.4-3.7-1.1v5.9a5.5 5.5 0 11-5.5-5.5c.3 0 .6 0 .9.1v2.8a2.7 2.7 0 102 2.6V3H16z"/></svg>',
-    youtube:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="22" height="22"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5"/><path d="M10 9.2l5 2.8-5 2.8z" fill="currentColor" stroke="none"/></svg>',
-    x:'<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.5 3h3l-6.6 7.5L21.7 21h-5.8l-4.5-5.9L6.1 21H3l7-8L2.7 3h5.9l4.1 5.4zM16.4 19.2h1.6L7.7 4.7H6z"/></svg>',
-    line:'<svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 3C6.9 3 3 6.4 3 10.5c0 3.7 3.1 6.8 7.4 7.4.3.1.7.2.8.5.1.3 0 .7 0 .9l-.1.8c0 .2-.2.9.8.5s5.3-3.1 7.2-5.3c1.3-1.4 1.9-2.9 1.9-4.8C21 6.4 17.1 3 12 3z"/></svg>'
-  };
+  /* Social strip (共通ヘルパーを再利用 = ヘッダー/フッターと同一の3アイコン) */
   var strip = document.getElementById('social-strip');
-  if(strip){
-    Object.keys(ICONS).forEach(function(k){
-      var url=S[k], hidden=url?'':' hidden';
-      strip.insertAdjacentHTML('beforeend','<a href="'+(url||'#')+'"'+hidden+' target="_blank" rel="noopener noreferrer" data-social="'+k+'" data-ev="sns_click" aria-label="TERAPP '+k+'">'+ICONS[k]+'</a>');
-    });
-  }
+  if(strip && window.terappSocialHTML){ strip.innerHTML = window.terappSocialHTML(); }
 
   /* Tilt on featured cards (fine pointer only) */
   if(window.matchMedia('(pointer:fine)').matches && !reduce){

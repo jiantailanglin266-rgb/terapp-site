@@ -90,10 +90,9 @@ document.addEventListener('DOMContentLoaded', function(){
       render(btn.getAttribute('data-filter'));
     });
   });
-  /* social strip */
-  var S=window.TERAPP_SOCIAL||{},strip=document.getElementById('social-strip');
-  var IC={instagram:'IG',tiktok:'TT',youtube:'YT',x:'X',line:'LINE'};
-  if(strip) Object.keys(IC).forEach(function(k){ var u=S[k]; strip.insertAdjacentHTML('beforeend','<a href="'+(u||'#')+'"'+(u?'':' hidden')+' target="_blank" rel="noopener" data-social="'+k+'" data-ev="sns_click" aria-label="TERAPP '+k+'" style="font-family:var(--sans);font-size:.6rem;letter-spacing:.1em">'+IC[k]+'</a>'); });
+  /* social strip (共通ヘルパー = ヘッダー/フッターと同一の3アイコン) */
+  var strip=document.getElementById('social-strip');
+  if(strip && window.terappSocialHTML){ strip.innerHTML = window.terappSocialHTML(); }
 });
 </script>
 </body>

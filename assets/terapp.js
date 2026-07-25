@@ -13,12 +13,12 @@
 
   /* ---- SNSリンク（本番では NEXT_PUBLIC_*_URL 等の環境変数/設定で管理。
           未確定のものは空文字にして自動的に非表示。架空URLは設定しない）---- */
+  /* 公式SNS。URLはここに入れるだけで全ページのアイコンが有効化される。
+     未設定（空文字）の間は「準備中」リンク(#)として表示される。架空URLは入れない。 */
   var SOCIAL = {
-    instagram: '',   // NEXT_PUBLIC_INSTAGRAM_URL
-    tiktok:    '',   // NEXT_PUBLIC_TIKTOK_URL
-    youtube:   '',   // NEXT_PUBLIC_YOUTUBE_URL
-    x:         '',   // NEXT_PUBLIC_X_URL
-    line:      ''    // NEXT_PUBLIC_LINE_URL
+    instagram: '',   // 例: 'https://www.instagram.com/xxxx'  (NEXT_PUBLIC_INSTAGRAM_URL)
+    youtube:   '',   // 例: 'https://www.youtube.com/@xxxx'   (NEXT_PUBLIC_YOUTUBE_URL)
+    tiktok:    ''    // 例: 'https://www.tiktok.com/@xxxx'    (NEXT_PUBLIC_TIKTOK_URL)
   };
   window.TERAPP_SOCIAL = SOCIAL;
 
@@ -40,14 +40,19 @@
     line:'<svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 3C6.9 3 3 6.4 3 10.5c0 3.7 3.1 6.8 7.4 7.4.3.1.7.2.8.5.1.3 0 .7 0 .9l-.1.8c0 .2-.2.9.8.5s5.3-3.1 7.2-5.3c1.3-1.4 1.9-2.9 1.9-4.8C21 6.4 17.1 3 12 3z"/></svg>'
   };
 
+  var SOCIAL_LABELS = {instagram:'Instagram',youtube:'YouTube',tiktok:'TikTok',x:'X',line:'LINE'};
+  /* 常時表示。URLがあれば新規タブで開く外部リンク、無ければ「準備中」リンク(#)。 */
   function socialLinksHTML(cls){
     return Object.keys(SOCIAL).map(function(k){
       var url = SOCIAL[k];
-      var hidden = url ? '' : ' hidden';
-      var labels = {instagram:'Instagram',tiktok:'TikTok',youtube:'YouTube',x:'X',line:'LINE'};
-      return '<a href="'+(url||'#')+'"'+hidden+' class="'+(cls||'')+'" aria-label="TERAPP '+labels[k]+'" target="_blank" rel="noopener noreferrer" data-social="'+k+'">'+SOCIAL_ICONS[k]+'</a>';
+      var attrs = url
+        ? ' href="'+url+'" target="_blank" rel="noopener noreferrer"'
+        : ' href="#" aria-disabled="true" title="準備中"';
+      var label = 'TERAPP '+SOCIAL_LABELS[k] + (url ? '' : '（準備中）');
+      return '<a'+attrs+' class="'+(cls||'')+'" aria-label="'+label+'" data-social="'+k+'" data-ev="sns_click">'+SOCIAL_ICONS[k]+'</a>';
     }).join('');
   }
+  window.terappSocialHTML = socialLinksHTML; // 各ページのSNS枠から再利用
 
   var BRAND_MARK = '<svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="bm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E99AAD"/><stop offset="1" stop-color="#C9A86A"/></linearGradient></defs><circle cx="16" cy="16" r="13" fill="none" stroke="url(#bm)" stroke-width="2"/><circle cx="16" cy="16" r="5" fill="url(#bm)"/></svg>';
 
@@ -75,6 +80,7 @@
     '<header class="thdr" id="thdr">'+
       '<a href="index.html" class="brand" aria-label="TERAPP ホーム">'+BRAND_MARK+'<span class="brand-name">TERAPP</span></a>'+
       '<nav class="nav" aria-label="メインナビゲーション">'+navHTML+
+        '<span class="nav-social" aria-label="公式SNS">'+socialLinksHTML('nav-soc')+'</span>'+
         '<a href="products.html" class="nav-cta" data-ev="purchase_click">購入する</a>'+
       '</nav>'+
       '<button class="burger" id="burger" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>'+
