@@ -78,7 +78,7 @@
   }).join('');
   var header = el(
     '<header class="thdr" id="thdr">'+
-      '<a href="index.html" class="brand" aria-label="TERAPP ホーム">'+BRAND_MARK+'<span class="brand-name">TERAPP</span></a>'+
+      '<a href="index.html" class="brand" aria-label="TERAPP ホーム"><img class="brand-logo" src="assets/terapp-logo.png" alt="TERAPP" width="692" height="335"></a>'+
       '<nav class="nav" aria-label="メインナビゲーション">'+navHTML+
         '<span class="nav-social" aria-label="公式SNS">'+socialLinksHTML('nav-soc')+'</span>'+
         '<a href="products.html" class="nav-cta" data-ev="purchase_click">購入する</a>'+
@@ -118,7 +118,7 @@
     '<footer class="tftr">'+
       '<div class="ftr-wrap">'+
         '<div class="ftr-col ftr-brand">'+
-          '<a href="index.html" class="foot-brand">TERAPP</a>'+
+          '<a href="index.html" class="foot-brand"><img src="assets/terapp-logo.png" alt="TERAPP" width="692" height="335"></a>'+
           '<p>目に見えない力で、毎日のコンディションを整える。テラヘルツの可能性を、美容とコンディショニングへ。</p>'+
           '<div class="ftr-social">'+socialLinksHTML()+'</div>'+
         '</div>'+
@@ -450,7 +450,7 @@
   (function(){
     if(reduce || PAGE.id!=='home') return;
     try{ if(sessionStorage.getItem('terapp_intro')) return; sessionStorage.setItem('terapp_intro','1'); }catch(e){}
-    var intro = el('<div class="flash-intro" aria-hidden="true"><span class="fi-glow"></span><span class="fi-line"></span><span class="fi-logo">TERAPP</span></div>');
+    var intro = el('<div class="flash-intro" aria-hidden="true"><span class="fi-glow"></span><span class="fi-line"></span><img class="fi-logo" src="assets/terapp-logo.png" alt="TERAPP"></div>');
     document.body.appendChild(intro);
     requestAnimationFrame(function(){ intro.classList.add('run'); });
     setTimeout(function(){ intro.classList.add('done'); }, 1500);
