@@ -54,20 +54,47 @@
           mask-image:radial-gradient(125% 120% at 50% 46%,#000 58%,transparent 100%);
   filter:drop-shadow(0 24px 60px rgba(0,0,0,.55))}
 @keyframes heroLogoFloat{0%,100%{transform:translateY(-1.2%)}50%{transform:translateY(1.6%)}}
-/* ===== FV専用 背景演出（ロゴ・文字の背面 z:1）===== */
+/* ===== FV専用 最高級 背景演出（背面 z:1・枠 z:2／本文 z:5）===== */
 .hero-bg{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none}
-.hero-bg .hb-glow{position:absolute;border-radius:50%;filter:blur(60px);will-change:transform}
-.hb-glow.a{top:-12%;left:4%;width:42vw;height:42vw;background:radial-gradient(circle,rgba(203,168,95,.22),transparent 70%);animation:hbDrift1 18s ease-in-out infinite}
-.hb-glow.b{bottom:-10%;right:2%;width:46vw;height:46vw;background:radial-gradient(circle,rgba(120,162,120,.16),transparent 70%);animation:hbDrift2 22s ease-in-out infinite}
+/* aurora glows */
+.hero-bg .hb-glow{position:absolute;border-radius:50%;filter:blur(64px);will-change:transform}
+.hb-glow.a{top:-14%;left:2%;width:44vw;height:44vw;background:radial-gradient(circle,rgba(203,168,95,.24),transparent 70%);animation:hbDrift1 18s ease-in-out infinite}
+.hb-glow.b{bottom:-12%;right:0;width:48vw;height:48vw;background:radial-gradient(circle,rgba(120,162,120,.16),transparent 70%);animation:hbDrift2 22s ease-in-out infinite}
 @keyframes hbDrift1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(5%,6%) scale(1.16)}}
 @keyframes hbDrift2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-6%,-5%) scale(1.12)}}
-.hero-bg .hb-ray{position:absolute;top:-20%;height:140%;width:clamp(60px,9vw,130px);filter:blur(8px);transform:rotate(15deg);
-  background:linear-gradient(90deg,transparent,rgba(233,210,154,.15),transparent);animation:hbRay 15s ease-in-out var(--ryd,0s) infinite}
-@keyframes hbRay{0%,100%{opacity:0}45%,55%{opacity:1}}
-.hero-bg .hb-wave{position:absolute;top:43%;left:50%;width:min(76vw,620px);aspect-ratio:1;border:1px solid rgba(203,168,95,.3);border-radius:50%;
-  transform:translate(-50%,-50%) scale(.15);opacity:0;animation:hbWave 8s ease-out var(--wdl,0s) infinite}
+/* god rays from top */
+.hero-bg .hb-rays{position:absolute;left:50%;top:-6%;width:130vw;height:80vh;transform:translateX(-50%);
+  background:repeating-conic-gradient(from 180deg at 50% 0%, rgba(233,210,154,.06) 0deg 1.4deg, transparent 1.4deg 8deg);
+  -webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.85),transparent 82%);mask-image:linear-gradient(180deg,rgba(0,0,0,.85),transparent 82%);
+  filter:blur(3px);mix-blend-mode:screen;animation:hbRays 13s ease-in-out infinite}
+@keyframes hbRays{0%,100%{opacity:.45}50%{opacity:.95}}
+/* terahertz ripples */
+.hero-bg .hb-wave{position:absolute;top:43%;left:50%;width:min(78vw,640px);aspect-ratio:1;border-radius:50%;
+  border:1px solid rgba(203,168,95,.32);transform:translate(-50%,-50%) scale(.15);opacity:0;animation:hbWave 8s ease-out var(--wdl,0s) infinite}
 @keyframes hbWave{0%{transform:translate(-50%,-50%) scale(.15);opacity:0}18%{opacity:.5}100%{transform:translate(-50%,-50%) scale(1.3);opacity:0}}
-@media(prefers-reduced-motion:reduce){.hero-bg .hb-wave,.hero-bg .hb-ray{display:none}}
+/* rising gold dust (JS-generated) */
+.hero-bg .hb-dust{position:absolute;bottom:-4%;width:var(--dz,3px);height:var(--dz,3px);border-radius:50%;
+  background:radial-gradient(circle,rgba(240,226,180,.95),rgba(203,168,95,0) 70%);opacity:0;animation:hbDust var(--dd,15s) linear var(--ddl,0s) infinite}
+@keyframes hbDust{0%{transform:translateY(0) scale(.6);opacity:0}12%{opacity:.85}86%{opacity:.7}100%{transform:translateY(-104vh) scale(1.15);opacity:0}}
+/* vignette */
+.hero-bg .hb-vignette{position:absolute;inset:0;background:radial-gradient(135% 105% at 50% 42%,transparent 42%,rgba(3,11,8,.55) 100%)}
+/* gold frame + art-deco corners */
+.hero-frame{position:absolute;z-index:2;inset:clamp(14px,3vw,34px);border:1px solid rgba(203,168,95,.28);border-radius:6px;pointer-events:none}
+.hero-frame::before{content:"";position:absolute;inset:6px;border:1px solid rgba(203,168,95,.12);border-radius:4px}
+.hf-corner{position:absolute;width:clamp(66px,10vw,120px);height:auto;opacity:.9;animation:hbShine 7s ease-in-out infinite}
+.hf-corner.tl{top:-1px;left:-1px}
+.hf-corner.tr{top:-1px;right:-1px;transform:scaleX(-1);animation-delay:-1.75s}
+.hf-corner.bl{bottom:-1px;left:-1px;transform:scaleY(-1);animation-delay:-3.5s}
+.hf-corner.br{bottom:-1px;right:-1px;transform:scale(-1,-1);animation-delay:-5.25s}
+@keyframes hbShine{0%,100%{filter:drop-shadow(0 0 4px rgba(203,168,95,.12))}50%{filter:drop-shadow(0 0 13px rgba(240,226,180,.5))}}
+/* logo glint sweep */
+.hero-logo{overflow:hidden;border-radius:22px}
+.hero-logo::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(115deg,transparent 42%,rgba(255,251,238,.30) 49%,transparent 57%);
+  transform:translateX(-130%);animation:hbGlint 6.5s ease-in-out 2.5s infinite}
+@keyframes hbGlint{0%{transform:translateX(-130%)}16%{transform:translateX(130%)}100%{transform:translateX(130%)}}
+@media(prefers-reduced-motion:reduce){.hero-bg .hb-wave,.hero-bg .hb-rays,.hero-bg .hb-dust{display:none}.hf-corner{animation:none}.hero-logo::after{display:none}}
+@media(max-width:560px){.hero-frame{inset:8px}.hf-corner{width:58px}}
 .stage{position:relative;width:min(72vw,360px);aspect-ratio:1/1;margin:1rem auto 1.6rem;display:grid;place-items:center}
 .stage-glow{position:absolute;inset:12%;border-radius:50%;background:radial-gradient(closest-side,rgba(203,168,95,.4),rgba(203,168,95,.15) 60%,transparent 75%);filter:blur(6px);z-index:0}
 .ring{position:absolute;border-radius:50%}
@@ -118,20 +145,18 @@
   <div class="hero-bg" aria-hidden="true">
     <span class="hb-glow a"></span>
     <span class="hb-glow b"></span>
-    <span class="hb-ray" style="left:22%"></span>
-    <span class="hb-ray" style="left:68%;--ryd:-7s"></span>
+    <span class="hb-rays"></span>
     <span class="hb-wave" style="--wdl:0s"></span>
     <span class="hb-wave" style="--wdl:2s"></span>
     <span class="hb-wave" style="--wdl:4s"></span>
     <span class="hb-wave" style="--wdl:6s"></span>
-    <span class="bd-spark" style="left:14%;top:20%;--ss:12px;--sd:5s;--sdl:0s"></span>
-    <span class="bd-spark" style="left:82%;top:16%;--ss:15px;--sd:6s;--sdl:1.2s"></span>
-    <span class="bd-spark" style="left:26%;top:70%;--ss:11px;--sd:4.5s;--sdl:2s"></span>
-    <span class="bd-spark" style="left:74%;top:64%;--ss:16px;--sd:5.5s;--sdl:.6s"></span>
-    <span class="bd-spark" style="left:46%;top:14%;--ss:10px;--sd:5s;--sdl:2.6s"></span>
-    <span class="bd-spark" style="left:60%;top:78%;--ss:13px;--sd:6.5s;--sdl:1.8s"></span>
-    <span class="bd-spark" style="left:10%;top:52%;--ss:11px;--sd:5s;--sdl:3.2s"></span>
-    <span class="bd-spark" style="left:90%;top:46%;--ss:14px;--sd:6s;--sdl:.3s"></span>
+    <span class="hb-vignette"></span>
+  </div>
+  <div class="hero-frame" aria-hidden="true">
+    <img class="hf-corner tl" src="assets/hero-corner.svg" alt="" width="300" height="300">
+    <img class="hf-corner tr" src="assets/hero-corner.svg" alt="" width="300" height="300">
+    <img class="hf-corner bl" src="assets/hero-corner.svg" alt="" width="300" height="300">
+    <img class="hf-corner br" src="assets/hero-corner.svg" alt="" width="300" height="300">
   </div>
   <div class="hero-inner">
     <p class="hero-eyebrow eyebrow" data-h="1">The Invisible Possibility</p>
@@ -374,6 +399,20 @@
 /* Top page: intro line stagger + journal preview + social strip + tilt */
 document.addEventListener('DOMContentLoaded', function(){
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* FV: rising gold dust */
+  (function(){
+    if(reduce) return;
+    var hb=document.querySelector('.hero-bg'); if(!hb) return;
+    for(var i=0;i<16;i++){
+      var d=document.createElement('span'); d.className='hb-dust';
+      d.style.left=(Math.random()*100).toFixed(1)+'%';
+      d.style.setProperty('--dz',(2+Math.random()*3).toFixed(1)+'px');
+      d.style.setProperty('--dd',(12+Math.random()*10).toFixed(1)+'s');
+      d.style.setProperty('--ddl',(-Math.random()*16).toFixed(1)+'s');
+      hb.appendChild(d);
+    }
+  })();
 
   /* Hero entrance */
   if(!reduce){
