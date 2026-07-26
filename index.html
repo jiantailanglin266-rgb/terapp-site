@@ -76,6 +76,18 @@
 .intro-lines p.in{opacity:1;transform:none}
 .featured-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.6rem;margin-top:2.6rem}
 .tilt{transition:transform .3s var(--ease)}
+/* Usage scenes マーキー（自動で流れ続ける／カーソルを当てても停止しない） */
+.scene-marquee{position:relative;overflow:hidden;margin-top:2.6rem;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);
+          mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.scene-track{display:flex;width:max-content;will-change:transform;animation:sceneMarquee 46s linear infinite}
+.scene-track img{height:clamp(280px,40vw,380px);width:auto;margin-right:1rem;border-radius:16px;
+  border:1px solid var(--line);box-shadow:var(--shadow-sm);flex-shrink:0;display:block;background:#0e211a}
+@keyframes sceneMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){
+  .scene-marquee{overflow-x:auto;-webkit-mask-image:none;mask-image:none}
+  .scene-track{animation:none}
+}
 @media(prefers-reduced-motion:reduce){.hero [data-h],.scroll-cue{opacity:1!important}.product{animation:none}.intro-lines p{opacity:1!important;transform:none!important}}
 @media(max-width:520px){.hero-cta{flex-direction:column;width:100%;max-width:300px}.hero-cta .btn{width:100%}}
 </style>
@@ -262,14 +274,23 @@
       <h2 class="sec-title">わたしの時間に、<br>そっと寄り添う。</h2>
       <div class="s-line left"></div>
     </div>
-    <div class="hscroll">
-      <div class="hscene"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2" stroke-linecap="round"/></svg></span><b>朝のスキンケア</b><span>一日の始まりに</span></div>
-      <div class="hscene"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 4l1.5 3L17 8l-2.5 2 .5 3.5L12 12l-3 1.5.5-3.5L7 8l3.5-1z" stroke-linejoin="round"/></svg></span><b>メイク前</b><span>身支度の時間に</span></div>
-      <div class="hscene"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="12" rx="1.5"/><path d="M8 21h8" stroke-linecap="round"/></svg></span><b>在宅ワーク</b><span>ながらケアに</span></div>
-      <div class="hscene"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z" stroke-linejoin="round"/></svg></span><b>リラックスタイム</b><span>夜のひとときに</span></div>
-      <div class="hscene"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h4l2-6 4 12 2-6h4" stroke-linejoin="round" stroke-linecap="round"/></svg></span><b>スポーツ前後</b><span>コンディショニングに</span></div>
-      <div class="hscene"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21V9l9-6 9 6v12" stroke-linejoin="round"/></svg></span><b>旅行</b><span>持ち運びやすく</span></div>
-      <div class="hscene"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z" stroke-linejoin="round"/></svg></span><b>特別な日</b><span>大切な予定の前に</span></div>
+  </div>
+  <div class="scene-marquee" role="group" aria-label="使用シーン">
+    <div class="scene-track">
+      <img src="images/scenes/scene-morning.jpg" width="720" height="1080" loading="lazy" alt="使用シーン：朝のスキンケア（一日の始まりに）">
+      <img src="images/scenes/scene-makeup.jpg" width="720" height="1080" loading="lazy" alt="使用シーン：メイク前（身支度の時間に）">
+      <img src="images/scenes/scene-remote.jpg" width="720" height="1080" loading="lazy" alt="使用シーン：在宅ワーク（ながらケアに）">
+      <img src="images/scenes/scene-relax.jpg" width="720" height="1080" loading="lazy" alt="使用シーン：リラックスタイム（夜のひとときに）">
+      <img src="images/scenes/scene-sports.jpg" width="720" height="1080" loading="lazy" alt="使用シーン：スポーツ前後（コンディショニングに）">
+      <img src="images/scenes/scene-travel.jpg" width="720" height="1080" loading="lazy" alt="使用シーン：旅行（持ち運びやすく）">
+      <img src="images/scenes/scene-special.jpg" width="720" height="1080" loading="lazy" alt="使用シーン：特別な日（大切な予定の前に）">
+      <img src="images/scenes/scene-morning.jpg" width="720" height="1080" loading="lazy" alt="" aria-hidden="true">
+      <img src="images/scenes/scene-makeup.jpg" width="720" height="1080" loading="lazy" alt="" aria-hidden="true">
+      <img src="images/scenes/scene-remote.jpg" width="720" height="1080" loading="lazy" alt="" aria-hidden="true">
+      <img src="images/scenes/scene-relax.jpg" width="720" height="1080" loading="lazy" alt="" aria-hidden="true">
+      <img src="images/scenes/scene-sports.jpg" width="720" height="1080" loading="lazy" alt="" aria-hidden="true">
+      <img src="images/scenes/scene-travel.jpg" width="720" height="1080" loading="lazy" alt="" aria-hidden="true">
+      <img src="images/scenes/scene-special.jpg" width="720" height="1080" loading="lazy" alt="" aria-hidden="true">
     </div>
   </div>
 </section>
