@@ -54,6 +54,20 @@
           mask-image:radial-gradient(125% 120% at 50% 46%,#000 58%,transparent 100%);
   filter:drop-shadow(0 24px 60px rgba(0,0,0,.55))}
 @keyframes heroLogoFloat{0%,100%{transform:translateY(-1.2%)}50%{transform:translateY(1.6%)}}
+/* ===== FV専用 背景演出（ロゴ・文字の背面 z:1）===== */
+.hero-bg{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none}
+.hero-bg .hb-glow{position:absolute;border-radius:50%;filter:blur(60px);will-change:transform}
+.hb-glow.a{top:-12%;left:4%;width:42vw;height:42vw;background:radial-gradient(circle,rgba(203,168,95,.22),transparent 70%);animation:hbDrift1 18s ease-in-out infinite}
+.hb-glow.b{bottom:-10%;right:2%;width:46vw;height:46vw;background:radial-gradient(circle,rgba(120,162,120,.16),transparent 70%);animation:hbDrift2 22s ease-in-out infinite}
+@keyframes hbDrift1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(5%,6%) scale(1.16)}}
+@keyframes hbDrift2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-6%,-5%) scale(1.12)}}
+.hero-bg .hb-ray{position:absolute;top:-20%;height:140%;width:clamp(60px,9vw,130px);filter:blur(8px);transform:rotate(15deg);
+  background:linear-gradient(90deg,transparent,rgba(233,210,154,.15),transparent);animation:hbRay 15s ease-in-out var(--ryd,0s) infinite}
+@keyframes hbRay{0%,100%{opacity:0}45%,55%{opacity:1}}
+.hero-bg .hb-wave{position:absolute;top:43%;left:50%;width:min(76vw,620px);aspect-ratio:1;border:1px solid rgba(203,168,95,.3);border-radius:50%;
+  transform:translate(-50%,-50%) scale(.15);opacity:0;animation:hbWave 8s ease-out var(--wdl,0s) infinite}
+@keyframes hbWave{0%{transform:translate(-50%,-50%) scale(.15);opacity:0}18%{opacity:.5}100%{transform:translate(-50%,-50%) scale(1.3);opacity:0}}
+@media(prefers-reduced-motion:reduce){.hero-bg .hb-wave,.hero-bg .hb-ray{display:none}}
 .stage{position:relative;width:min(72vw,360px);aspect-ratio:1/1;margin:1rem auto 1.6rem;display:grid;place-items:center}
 .stage-glow{position:absolute;inset:12%;border-radius:50%;background:radial-gradient(closest-side,rgba(203,168,95,.4),rgba(203,168,95,.15) 60%,transparent 75%);filter:blur(6px);z-index:0}
 .ring{position:absolute;border-radius:50%}
@@ -101,6 +115,24 @@
 
 <!-- ============ HERO ============ -->
 <section class="hero" aria-label="TERAPP メインビジュアル">
+  <div class="hero-bg" aria-hidden="true">
+    <span class="hb-glow a"></span>
+    <span class="hb-glow b"></span>
+    <span class="hb-ray" style="left:22%"></span>
+    <span class="hb-ray" style="left:68%;--ryd:-7s"></span>
+    <span class="hb-wave" style="--wdl:0s"></span>
+    <span class="hb-wave" style="--wdl:2s"></span>
+    <span class="hb-wave" style="--wdl:4s"></span>
+    <span class="hb-wave" style="--wdl:6s"></span>
+    <span class="bd-spark" style="left:14%;top:20%;--ss:12px;--sd:5s;--sdl:0s"></span>
+    <span class="bd-spark" style="left:82%;top:16%;--ss:15px;--sd:6s;--sdl:1.2s"></span>
+    <span class="bd-spark" style="left:26%;top:70%;--ss:11px;--sd:4.5s;--sdl:2s"></span>
+    <span class="bd-spark" style="left:74%;top:64%;--ss:16px;--sd:5.5s;--sdl:.6s"></span>
+    <span class="bd-spark" style="left:46%;top:14%;--ss:10px;--sd:5s;--sdl:2.6s"></span>
+    <span class="bd-spark" style="left:60%;top:78%;--ss:13px;--sd:6.5s;--sdl:1.8s"></span>
+    <span class="bd-spark" style="left:10%;top:52%;--ss:11px;--sd:5s;--sdl:3.2s"></span>
+    <span class="bd-spark" style="left:90%;top:46%;--ss:14px;--sd:6s;--sdl:.3s"></span>
+  </div>
   <div class="hero-inner">
     <p class="hero-eyebrow eyebrow" data-h="1">The Invisible Possibility</p>
     <figure class="hero-logo" data-h="2">
