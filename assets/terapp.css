@@ -125,23 +125,36 @@ header.thdr.scrolled{background:rgba(8,20,16,.78);backdrop-filter:blur(18px) sat
    本文背面（sections z:2 の下）／pointer-events:none
    ============================================================ */
 #bg-decor{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
-#bg-decor .bd-glow{position:absolute;border-radius:50%;filter:blur(70px)}
-.bd-glow.g1{top:-14%;left:-10%;width:52vw;height:52vw;background:radial-gradient(circle,rgba(203,168,95,.22),transparent 70%)}
-.bd-glow.g2{bottom:-16%;right:-12%;width:56vw;height:56vw;background:radial-gradient(circle,rgba(230,205,146,.18),transparent 70%)}
-.bd-glow.g3{top:28%;left:50%;width:52vw;height:52vw;transform:translateX(-50%);background:radial-gradient(circle,rgba(150,175,120,.13),transparent 72%)}
-.bd-glow.g4{top:64%;left:14%;width:40vw;height:40vw;background:radial-gradient(circle,rgba(203,168,95,.12),transparent 72%)}
-.bd-corner{position:absolute;width:min(33vw,360px);height:auto;opacity:.4}
-.bd-corner.c-tl{top:-1.4rem;left:-1.4rem}
-.bd-corner.c-tr{top:-1.4rem;right:-1.4rem;transform:scaleX(-1)}
-.bd-corner.c-bl{bottom:-1.4rem;left:-1.4rem;transform:scaleY(-1)}
-.bd-corner.c-br{bottom:-1.4rem;right:-1.4rem;transform:scale(-1,-1)}
-.bd-spark{position:absolute;width:16px;height:16px;opacity:.5;
+#bg-decor .bd-glow{position:absolute;border-radius:50%;filter:blur(70px);will-change:transform,opacity}
+.bd-glow.g1{top:-14%;left:-10%;width:54vw;height:54vw;background:radial-gradient(circle,rgba(203,168,95,.24),transparent 70%);animation:bdGlow 15s ease-in-out infinite}
+.bd-glow.g2{bottom:-16%;right:-12%;width:58vw;height:58vw;background:radial-gradient(circle,rgba(230,205,146,.20),transparent 70%);animation:bdGlow 19s ease-in-out -5s infinite}
+.bd-glow.g3{top:26%;left:24%;width:54vw;height:54vw;background:radial-gradient(circle,rgba(150,175,120,.15),transparent 72%);animation:bdGlow 17s ease-in-out -9s infinite}
+.bd-glow.g4{top:62%;left:12%;width:44vw;height:44vw;background:radial-gradient(circle,rgba(203,168,95,.14),transparent 72%);animation:bdGlow 21s ease-in-out -3s infinite}
+@keyframes bdGlow{0%,100%{transform:scale(1);opacity:.72}50%{transform:scale(1.18);opacity:1}}
+
+/* 斜めに差し込む金の光シャフト（ゆっくり明滅） */
+.bd-ray{position:absolute;top:-25%;height:150%;width:clamp(70px,11vw,150px);filter:blur(8px);
+  background:linear-gradient(90deg,transparent,rgba(233,210,154,.13),transparent);
+  animation:bdRay var(--rd,16s) ease-in-out var(--rdl,0s) infinite}
+.bd-ray.r1{left:14%;transform:rotate(16deg)}
+.bd-ray.r2{left:52%;transform:rotate(16deg)}
+.bd-ray.r3{left:80%;transform:rotate(16deg)}
+@keyframes bdRay{0%,100%{opacity:0}45%,55%{opacity:1}}
+
+.bd-corner{position:absolute;width:min(35vw,380px);height:auto;opacity:.45;will-change:opacity,filter}
+.bd-corner.c-tl{top:-1.4rem;left:-1.4rem;animation:bdShimmer 8s ease-in-out infinite}
+.bd-corner.c-tr{top:-1.4rem;right:-1.4rem;transform:scaleX(-1);animation:bdShimmer 8s ease-in-out -2s infinite}
+.bd-corner.c-bl{bottom:-1.4rem;left:-1.4rem;transform:scaleY(-1);animation:bdShimmer 8s ease-in-out -4s infinite}
+.bd-corner.c-br{bottom:-1.4rem;right:-1.4rem;transform:scale(-1,-1);animation:bdShimmer 8s ease-in-out -6s infinite}
+@keyframes bdShimmer{0%,100%{opacity:.34;filter:drop-shadow(0 0 5px rgba(203,168,95,.15))}50%{opacity:.62;filter:drop-shadow(0 0 18px rgba(233,210,154,.5))}}
+
+.bd-spark{position:absolute;width:var(--ss,16px);height:var(--ss,16px);opacity:.5;
   background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0C13 8 16 11 24 12C16 13 13 16 12 24C11 16 8 13 0 12C8 11 11 8 12 0Z' fill='%23E9D29A'/%3E%3C/svg%3E") center/contain no-repeat;
   animation:bdTwinkle var(--sd,5s) ease-in-out var(--sdl,0s) infinite}
-@keyframes bdTwinkle{0%,100%{opacity:.12;transform:scale(.6) rotate(0deg)}50%{opacity:.7;transform:scale(1.05) rotate(45deg)}}
+@keyframes bdTwinkle{0%,100%{opacity:.1;transform:scale(.5) rotate(0deg) translateY(0)}50%{opacity:.85;transform:scale(1.12) rotate(45deg) translateY(-9px)}}
 @media(max-width:560px){
-  .bd-corner{width:min(46vw,220px);opacity:.32}
-  .bd-corner.c-tr,.bd-corner.c-bl{display:none}
+  .bd-corner{width:min(48vw,230px);opacity:.34}
+  .bd-corner.c-tr,.bd-corner.c-bl,.bd-ray{display:none}
 }
 
 /* ============================================================

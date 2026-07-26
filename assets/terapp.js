@@ -69,13 +69,18 @@
 
   // Background decor (四隅ボタニカル + アンビエントグロー + きらめき)
   if(!document.getElementById('bg-decor')){
-    var sparkPos = [[12,20],[26,64],[44,14],[62,40],[78,72],[88,28],[36,84],[70,10]];
+    var sparkPos = [[10,16],[22,52],[34,22],[46,72],[58,34],[68,64],[78,18],[88,48],[16,80],[40,90],[62,12],[72,86],[92,68],[28,40]];
+    var sparkSz = [10,13,16,20];
     var sparks = sparkPos.map(function(p,i){
-      return '<span class="bd-spark" style="left:'+p[0]+'vw;top:'+p[1]+'vh;--sd:'+(4+i%4)+'s;--sdl:'+(i*0.5)+'s"></span>';
+      return '<span class="bd-spark" style="left:'+p[0]+'vw;top:'+p[1]+'vh;--ss:'+sparkSz[i%4]+'px;--sd:'+(4+i%5)+'s;--sdl:'+(i*0.4).toFixed(1)+'s"></span>';
     }).join('');
+    var rays = '<span class="bd-ray r1" style="--rd:16s;--rdl:0s"></span>'+
+               '<span class="bd-ray r2" style="--rd:20s;--rdl:-6s"></span>'+
+               '<span class="bd-ray r3" style="--rd:18s;--rdl:-11s"></span>';
     var bgDecor = el(
       '<div id="bg-decor" aria-hidden="true">'+
         '<span class="bd-glow g1"></span><span class="bd-glow g2"></span><span class="bd-glow g3"></span><span class="bd-glow g4"></span>'+
+        rays +
         '<img class="bd-corner c-tl" src="assets/ornament-corner.svg" alt="" width="480" height="480">'+
         '<img class="bd-corner c-tr" src="assets/ornament-corner.svg" alt="" width="480" height="480">'+
         '<img class="bd-corner c-bl" src="assets/ornament-corner.svg" alt="" width="480" height="480">'+
