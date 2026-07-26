@@ -47,6 +47,13 @@
 .hero-sub{margin-top:1.6rem;font-size:clamp(.92rem,2.4vw,1.08rem);color:var(--muted);line-height:2}
 .hero-en{margin-top:1.4rem;font-family:var(--serif);font-size:clamp(1rem,2.6vw,1.4rem);letter-spacing:.24em;color:var(--gold-l)}
 .hero-cta{display:flex;flex-wrap:wrap;gap:.9rem;justify-content:center;margin-top:2.4rem}
+/* ブランドロゴ画像：暗背景と地色が近いためエッジをマスクで馴染ませ、ヒーローに“浮遊”させる */
+.hero-logo{position:relative;z-index:5;width:min(84vw,500px);margin:.4rem auto 1.4rem;animation:heroLogoFloat 7s ease-in-out infinite}
+.hero-logo img{width:100%;border-radius:22px;
+  -webkit-mask-image:radial-gradient(125% 120% at 50% 46%,#000 58%,transparent 100%);
+          mask-image:radial-gradient(125% 120% at 50% 46%,#000 58%,transparent 100%);
+  filter:drop-shadow(0 24px 60px rgba(0,0,0,.55))}
+@keyframes heroLogoFloat{0%,100%{transform:translateY(-1.2%)}50%{transform:translateY(1.6%)}}
 .stage{position:relative;width:min(72vw,360px);aspect-ratio:1/1;margin:1rem auto 1.6rem;display:grid;place-items:center}
 .stage-glow{position:absolute;inset:12%;border-radius:50%;background:radial-gradient(closest-side,rgba(203,168,95,.4),rgba(203,168,95,.15) 60%,transparent 75%);filter:blur(6px);z-index:0}
 .ring{position:absolute;border-radius:50%}
@@ -84,18 +91,9 @@
 <section class="hero" aria-label="TERAPP メインビジュアル">
   <div class="hero-inner">
     <p class="hero-eyebrow eyebrow" data-h="1">The Invisible Possibility</p>
-    <div class="stage" data-h="2" aria-hidden="true">
-      <div class="stage-glow"></div>
-      <span class="ring r3"></span><span class="ring r1"></span><span class="ring r2"></span>
-      <div class="product">
-        <img src="images/home/hero-main.webp" alt="TERAPP 商品イメージ" width="360" height="480" fetchpriority="high"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-        <div class="product-ph" style="display:none">
-          <svg viewBox="0 0 120 150" aria-hidden="true"><defs><linearGradient id="phg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E99AAD"/><stop offset="1" stop-color="#C9A86A"/></linearGradient></defs><rect x="18" y="14" width="84" height="122" rx="20" fill="none" stroke="url(#phg)" stroke-width="2.5"/><ellipse cx="60" cy="66" rx="30" ry="22" fill="none" stroke="url(#phg)" stroke-width="2"/><circle cx="60" cy="66" r="7" fill="url(#phg)"/></svg>
-          <span class="ph-label">Brand Visual</span><span class="ph-name">TERAPP</span>
-        </div>
-      </div>
-    </div>
+    <figure class="hero-logo" data-h="2">
+      <img src="images/home/terapp-hero-logo.jpg" alt="TERAPP ブランドロゴ" width="1000" height="900" fetchpriority="high">
+    </figure>
     <h1 data-h="3">美しさは、<br>目に見えないところから。</h1>
     <p class="hero-sub" data-h="4">テラヘルツの可能性を、<br>毎日の美容とコンディショニングへ。</p>
     <p class="hero-en" data-h="5">THE INVISIBLE POSSIBILITY</p>
