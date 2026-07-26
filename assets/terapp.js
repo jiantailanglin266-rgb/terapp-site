@@ -67,6 +67,25 @@
     document.body.insertBefore(sk, document.body.firstChild);
   }
 
+  // Background decor (四隅ボタニカル + アンビエントグロー + きらめき)
+  if(!document.getElementById('bg-decor')){
+    var sparkPos = [[12,20],[26,64],[44,14],[62,40],[78,72],[88,28],[36,84],[70,10]];
+    var sparks = sparkPos.map(function(p,i){
+      return '<span class="bd-spark" style="left:'+p[0]+'vw;top:'+p[1]+'vh;--sd:'+(4+i%4)+'s;--sdl:'+(i*0.5)+'s"></span>';
+    }).join('');
+    var bgDecor = el(
+      '<div id="bg-decor" aria-hidden="true">'+
+        '<span class="bd-glow g1"></span><span class="bd-glow g2"></span><span class="bd-glow g3"></span><span class="bd-glow g4"></span>'+
+        '<img class="bd-corner c-tl" src="assets/ornament-corner.svg" alt="" width="480" height="480">'+
+        '<img class="bd-corner c-tr" src="assets/ornament-corner.svg" alt="" width="480" height="480">'+
+        '<img class="bd-corner c-bl" src="assets/ornament-corner.svg" alt="" width="480" height="480">'+
+        '<img class="bd-corner c-br" src="assets/ornament-corner.svg" alt="" width="480" height="480">'+
+        sparks +
+      '</div>'
+    );
+    document.body.insertBefore(bgDecor, document.body.firstChild);
+  }
+
   // Scroll progress bar
   var progress = el('<div class="scroll-progress" aria-hidden="true"></div>');
   document.body.appendChild(progress);
