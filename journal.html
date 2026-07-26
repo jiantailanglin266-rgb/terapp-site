@@ -46,8 +46,28 @@
 <div id="breadcrumbs"></div>
 
 <main id="main">
-<section class="section" style="background:linear-gradient(180deg,#fff,#FFF9FB)">
+<!-- 美容ニュース（毎日自動更新 / GitHub Actions が data/news.json を更新） -->
+<section class="section">
   <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Daily Beauty News</span>
+      <h2 class="sec-title">美容ニュース</h2>
+      <div class="s-line"></div>
+      <p class="lead muted" style="margin-top:1rem;max-width:640px;margin-left:auto;margin-right:auto">国内の美容・コスメ関連の最新ニュースを、毎日1件ずつ自動でお届けします。</p>
+    </div>
+    <div class="journal-grid" id="news-grid"></div>
+    <p class="form-note" style="margin-top:1.6rem">※外部メディアの見出しを自動取得し、出典元へリンクしています。記事本文は各配信元サイトでご覧ください。<span id="news-updated"></span></p>
+  </div>
+</section>
+
+<!-- ブランドのコラム -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">TERAPP Journal</span>
+      <h2 class="sec-title">ブランドのコラム</h2>
+      <div class="s-line"></div>
+    </div>
     <div class="filter-bar" role="group" aria-label="カテゴリーで絞り込み">
       <button class="filter-btn" data-filter="all" aria-pressed="true">All</button>
       <button class="filter-btn" data-filter="NEWS" aria-pressed="false">News</button>
@@ -93,6 +113,31 @@ document.addEventListener('DOMContentLoaded', function(){
   /* social strip (共通ヘルパー = ヘッダー/フッターと同一の3アイコン) */
   var strip=document.getElementById('social-strip');
   if(strip && window.terappSocialHTML){ strip.innerHTML = window.terappSocialHTML(); }
+
+  /* 美容ニュース（自動取得: data/news.json）— 外部由来のため全項目エスケープ */
+  (function(){
+    function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
+    var ng=document.getElementById('news-grid'); if(!ng) return;
+    ng.innerHTML='<p class="journal-empty">最新の美容ニュースを読み込んでいます…</p>';
+    fetch('data/news.json',{cache:'no-store'}).then(function(r){ return r.ok?r.json():{items:[]}; }).then(function(d){
+      var items=(d&&d.items)||[];
+      if(!items.length){ ng.innerHTML='<p class="journal-empty">最新の美容ニュースを取得しています。しばらくお待ちください。</p>'; return; }
+      ng.innerHTML='';
+      items.slice(0,12).forEach(function(a){
+        var url = /^https?:\/\//.test(a.url) ? a.url : '#';
+        var date = esc(a.date).replace(/-/g,'.');
+        ng.insertAdjacentHTML('beforeend',
+          '<a class="journal-card" href="'+esc(url)+'" target="_blank" rel="noopener noreferrer" data-ev="news_open">'+
+            '<div class="journal-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="#E9D29A" stroke-width="1.1" aria-hidden="true"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 12h8M8 15h5"/></svg></div>'+
+            '<div class="journal-body"><div class="journal-meta"><span class="journal-cat">NEWS</span><span class="journal-date">'+date+'</span></div>'+
+            '<h3>'+esc(a.title)+'</h3>'+
+            (a.excerpt?'<p>'+esc(a.excerpt)+'</p>':'')+
+            '<span class="read">'+esc(a.source)+' ↗</span></div></a>');
+      });
+      var up=document.getElementById('news-updated');
+      if(up && d.updated){ var u=new Date(d.updated); if(!isNaN(u)) up.textContent=' 最終更新: '+u.toLocaleDateString('ja-JP'); }
+    }).catch(function(){ ng.innerHTML='<p class="journal-empty">ニュースの読み込みに失敗しました。時間をおいて再度お試しください。</p>'; });
+  })();
 });
 </script>
 </body>
