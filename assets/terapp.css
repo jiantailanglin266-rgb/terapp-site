@@ -41,6 +41,10 @@ body{
     radial-gradient(130% 90% at 50% 0%, #14362a 0%, #0d241d 42%, #081611 100%) fixed,
     #0b1e19;
 }
+/* モバイルは background-attachment:fixed が無視/不具合になるため scroll に上書き（背景グラデを確実に描画） */
+@media(max-width:768px){
+  body{background-attachment:scroll,scroll,scroll}
+}
 img{max-width:100%;height:auto;display:block}
 a{color:inherit}
 ::selection{background:var(--gold);color:var(--ink)}
@@ -153,8 +157,9 @@ header.thdr.scrolled{background:rgba(8,20,16,.78);backdrop-filter:blur(18px) sat
   animation:bdTwinkle var(--sd,5s) ease-in-out var(--sdl,0s) infinite}
 @keyframes bdTwinkle{0%,100%{opacity:.1;transform:scale(.5) rotate(0deg) translateY(0)}50%{opacity:.85;transform:scale(1.12) rotate(45deg) translateY(-9px)}}
 @media(max-width:560px){
-  .bd-corner{width:min(48vw,230px);opacity:.34}
-  .bd-corner.c-tr,.bd-corner.c-bl,.bd-ray{display:none}
+  /* モバイルでも四隅の装飾と光線をすべて表示（視認性を確保） */
+  .bd-corner{width:min(44vw,205px);opacity:.46}
+  .bd-ray{width:clamp(48px,15vw,90px)}
 }
 
 /* ============================================================
