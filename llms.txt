@@ -18,19 +18,19 @@
 - TERAPPはその可能性に着目し、独自の技術思想を美容ケア製品へ取り入れている。
 
 ## 主要ページ
-- [トップ](https://TERAPP-DOMAIN-TBD/index.html): ブランドの世界観・注目商品・ブランドフィルム・最新情報
-- [ブランドコンセプト](https://TERAPP-DOMAIN-TBD/concept.html): 思想・ビジョン・美容/健康/スポーツへの考え方
-- [商品一覧](https://TERAPP-DOMAIN-TBD/products.html): 全商品のカテゴリー別一覧
-- [TERAPP Lift Up Patch](https://TERAPP-DOMAIN-TBD/product-lift-up-patch.html): 美容ケア用パッチの詳細・価格・FAQ
-- [TERAPP Conditioning Tape](https://TERAPP-DOMAIN-TBD/product-conditioning-tape.html): コンディショニングテープ（準備中）
-- [テクノロジー](https://TERAPP-DOMAIN-TBD/technology.html): テラヘルツ波の一般的な説明と安全性
-- [使い方](https://TERAPP-DOMAIN-TBD/how-to-use.html): 各商品の基本的な使い方
-- [美容について](https://TERAPP-DOMAIN-TBD/beauty.html): 毎日の美容習慣の提案
-- [コンディショニングについて](https://TERAPP-DOMAIN-TBD/conditioning.html): 日常・スポーツのセルフケア
-- [ニュース・コラム](https://TERAPP-DOMAIN-TBD/journal.html): ブランドのコラムと、毎日自動更新される国内美容ニュース
-- [よくある質問](https://TERAPP-DOMAIN-TBD/faq.html): 商品・使い方・購入・配送・返品・テラヘルツ・問い合わせ
-- [お問い合わせ](https://TERAPP-DOMAIN-TBD/contact.html): 各種お問い合わせ
-- [会社・事業者情報](https://TERAPP-DOMAIN-TBD/company.html): 運営者情報
+- [トップ](https://terapp.jp/index.html): ブランドの世界観・注目商品・ブランドフィルム・最新情報
+- [ブランドコンセプト](https://terapp.jp/concept.html): 思想・ビジョン・美容/健康/スポーツへの考え方
+- [商品一覧](https://terapp.jp/products.html): 全商品のカテゴリー別一覧
+- [TERAPP Lift Up Patch](https://terapp.jp/product-lift-up-patch.html): 美容ケア用パッチの詳細・価格・FAQ
+- [TERAPP Conditioning Tape](https://terapp.jp/product-conditioning-tape.html): コンディショニングテープ（準備中）
+- [テクノロジー](https://terapp.jp/technology.html): テラヘルツ波の一般的な説明と安全性
+- [使い方](https://terapp.jp/how-to-use.html): 各商品の基本的な使い方
+- [美容について](https://terapp.jp/beauty.html): 毎日の美容習慣の提案
+- [コンディショニングについて](https://terapp.jp/conditioning.html): 日常・スポーツのセルフケア
+- [ニュース・コラム](https://terapp.jp/journal.html): ブランドのコラムと、毎日自動更新される国内美容ニュース
+- [よくある質問](https://terapp.jp/faq.html): 商品・使い方・購入・配送・返品・テラヘルツ・問い合わせ
+- [お問い合わせ](https://terapp.jp/contact.html): 各種お問い合わせ
+- [会社・事業者情報](https://terapp.jp/company.html): 運営者情報
 
 ## 事業者情報
 - ブランド名: TERAPP

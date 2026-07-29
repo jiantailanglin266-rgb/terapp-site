@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- TODO(公開前): 正式ドメイン確定後、TERAPP-DOMAIN-TBD を実ドメインへ一括置換。URLは意図するクリーンURL(/concept 等)で記載。 -->
+<!-- TERAPP 公式サイト XMLサイトマップ（本番: https://terapp.jp/） -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://TERAPP-DOMAIN-TBD/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://TERAPP-DOMAIN-TBD/concept</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://TERAPP-DOMAIN-TBD/products</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://TERAPP-DOMAIN-TBD/products/lift-up-patch</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://TERAPP-DOMAIN-TBD/products/conditioning-tape</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://TERAPP-DOMAIN-TBD/technology</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://TERAPP-DOMAIN-TBD/how-to-use</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://TERAPP-DOMAIN-TBD/beauty</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://TERAPP-DOMAIN-TBD/conditioning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://TERAPP-DOMAIN-TBD/journal</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://TERAPP-DOMAIN-TBD/journal/brand-launch</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://TERAPP-DOMAIN-TBD/journal/how-to-patch</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://TERAPP-DOMAIN-TBD/journal/daily-selfcare</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://TERAPP-DOMAIN-TBD/journal/what-is-terahertz</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://TERAPP-DOMAIN-TBD/journal/faceline-neck</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://TERAPP-DOMAIN-TBD/faq</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://TERAPP-DOMAIN-TBD/contact</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://TERAPP-DOMAIN-TBD/stores</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://TERAPP-DOMAIN-TBD/company</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://TERAPP-DOMAIN-TBD/legal/tokushoho</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://TERAPP-DOMAIN-TBD/legal/privacy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://TERAPP-DOMAIN-TBD/legal/terms</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://TERAPP-DOMAIN-TBD/legal/returns</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://TERAPP-DOMAIN-TBD/sitemap-page</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://terapp.jp/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://terapp.jp/concept.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://terapp.jp/products.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://terapp.jp/product-lift-up-patch.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://terapp.jp/product-conditioning-tape.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://terapp.jp/technology.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://terapp.jp/how-to-use.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://terapp.jp/beauty.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://terapp.jp/conditioning.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://terapp.jp/journal.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://terapp.jp/journal-brand-launch.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://terapp.jp/journal-how-to-patch.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://terapp.jp/journal-daily-selfcare.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://terapp.jp/journal-what-is-terahertz.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://terapp.jp/journal-faceline-neck.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://terapp.jp/faq.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://terapp.jp/contact.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://terapp.jp/stores.html</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://terapp.jp/company.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://terapp.jp/legal-tokushoho.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://terapp.jp/legal-privacy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://terapp.jp/legal-terms.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://terapp.jp/legal-returns.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://terapp.jp/sitemap.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
 </urlset>

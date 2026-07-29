@@ -1,6 +1,5 @@
-# TERAPP 公式サイト robots.txt
-# TODO(公開前): 正式ドメイン確定後に Sitemap の URL を実ドメインへ更新
+# TERAPP 公式サイト robots.txt（本番: https://terapp.jp/）
 User-agent: *
 Allow: /
 
-Sitemap: https://TERAPP-DOMAIN-TBD/sitemap.xml
+Sitemap: https://terapp.jp/sitemap.xml
