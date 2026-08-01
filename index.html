@@ -117,18 +117,10 @@
 .intro-lines p.in{opacity:1;transform:none}
 .featured-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.6rem;margin-top:2.6rem}
 .tilt{transition:transform .3s var(--ease)}
-/* Usage scenes マーキー（自動で流れ続ける／カーソルを当てても停止しない） */
-.scene-marquee{position:relative;overflow:hidden;margin-top:2.6rem;
-  -webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);
-          mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
-.scene-track{display:flex;width:max-content;will-change:transform;animation:sceneMarquee 46s linear infinite}
-.scene-track img{height:clamp(280px,40vw,380px);width:auto;margin-right:1rem;border-radius:16px;
-  border:1px solid var(--line);box-shadow:var(--shadow-sm);flex-shrink:0;display:block;background:#0e211a}
-@keyframes sceneMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@media(prefers-reduced-motion:reduce){
-  .scene-marquee{overflow-x:auto;-webkit-mask-image:none;mask-image:none}
-  .scene-track{animation:none}
-}
+/* Usage scenes 静止グリッド */
+.scene-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:1rem;margin-top:2.6rem}
+.scene-grid img{width:100%;aspect-ratio:2/3;object-fit:cover;border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow-sm);background:#0e211a}
+@media(max-width:520px){.scene-grid{grid-template-columns:repeat(2,1fr)}}
 @media(prefers-reduced-motion:reduce){.hero [data-h],.scroll-cue{opacity:1!important}.product{animation:none}.intro-lines p{opacity:1!important;transform:none!important}}
 @media(max-width:520px){.hero-cta{flex-direction:column;width:100%;max-width:300px}.hero-cta .btn{width:100%}}
 </style>
@@ -173,12 +165,6 @@
   </div>
   <div class="scroll-cue"><span class="txt">SCROLL</span><span class="bar"></span></div>
 </section>
-
-<!-- ============ DUAL MARQUEE ============ -->
-<div class="marquee-band" aria-hidden="true">
-  <div class="marquee row1"><div class="mq-track ltr" id="mq1"></div></div>
-  <div class="marquee row2"><div class="mq-track rtl" id="mq2"></div></div>
-</div>
 
 <!-- ============ BRAND INTRODUCTION ============ -->
 <section class="section tight">
@@ -326,22 +312,15 @@
       <div class="s-line left"></div>
     </div>
   </div>
-  <div class="scene-marquee" role="group" aria-label="使用シーン">
-    <div class="scene-track">
-      <img src="images/scenes/scene-morning.jpg" width="720" height="1080" loading="lazy" alt="使用シーン：朝のスキンケア（一日の始まりに）">
-      <img src="images/scenes/scene-makeup.jpg" width="720" height="1080" loading="lazy" alt="使用シーン：メイク前（身支度の時間に）">
-      <img src="images/scenes/scene-remote.jpg" width="720" height="1080" loading="lazy" alt="使用シーン：在宅ワーク（ながらケアに）">
-      <img src="images/scenes/scene-relax.jpg" width="720" height="1080" loading="lazy" alt="使用シーン：リラックスタイム（夜のひとときに）">
-      <img src="images/scenes/scene-sports.jpg" width="720" height="1080" loading="lazy" alt="使用シーン：スポーツ前後（コンディショニングに）">
-      <img src="images/scenes/scene-travel.jpg" width="720" height="1080" loading="lazy" alt="使用シーン：旅行（持ち運びやすく）">
-      <img src="images/scenes/scene-special.jpg" width="720" height="1080" loading="lazy" alt="使用シーン：特別な日（大切な予定の前に）">
-      <img src="images/scenes/scene-morning.jpg" width="720" height="1080" loading="lazy" alt="" aria-hidden="true">
-      <img src="images/scenes/scene-makeup.jpg" width="720" height="1080" loading="lazy" alt="" aria-hidden="true">
-      <img src="images/scenes/scene-remote.jpg" width="720" height="1080" loading="lazy" alt="" aria-hidden="true">
-      <img src="images/scenes/scene-relax.jpg" width="720" height="1080" loading="lazy" alt="" aria-hidden="true">
-      <img src="images/scenes/scene-sports.jpg" width="720" height="1080" loading="lazy" alt="" aria-hidden="true">
-      <img src="images/scenes/scene-travel.jpg" width="720" height="1080" loading="lazy" alt="" aria-hidden="true">
-      <img src="images/scenes/scene-special.jpg" width="720" height="1080" loading="lazy" alt="" aria-hidden="true">
+  <div class="wrap">
+    <div class="scene-grid">
+      <img class="reveal" src="images/scenes/scene-morning.jpg" width="720" height="1080" loading="lazy" alt="使用シーン：朝のスキンケア（一日の始まりに）">
+      <img class="reveal" src="images/scenes/scene-makeup.jpg" width="720" height="1080" loading="lazy" alt="使用シーン：メイク前（身支度の時間に）">
+      <img class="reveal" src="images/scenes/scene-remote.jpg" width="720" height="1080" loading="lazy" alt="使用シーン：在宅ワーク（ながらケアに）">
+      <img class="reveal" src="images/scenes/scene-relax.jpg" width="720" height="1080" loading="lazy" alt="使用シーン：リラックスタイム（夜のひとときに）">
+      <img class="reveal" src="images/scenes/scene-sports.jpg" width="720" height="1080" loading="lazy" alt="使用シーン：スポーツ前後（コンディショニングに）">
+      <img class="reveal" src="images/scenes/scene-travel.jpg" width="720" height="1080" loading="lazy" alt="使用シーン：旅行（持ち運びやすく）">
+      <img class="reveal" src="images/scenes/scene-special.jpg" width="720" height="1080" loading="lazy" alt="使用シーン：特別な日（大切な予定の前に）">
     </div>
   </div>
 </section>
