@@ -259,6 +259,14 @@ header.thdr.scrolled{background:rgba(8,20,16,.78);backdrop-filter:blur(18px) sat
 .sec-head{margin-bottom:clamp(2.2rem,5vw,3.4rem)}
 .sec-head .eyebrow{display:block;margin-bottom:1rem}
 .sec-title{font-family:var(--jp-serif);font-weight:600;font-size:clamp(1.5rem,4vw,2.4rem);line-height:1.4;color:var(--text);letter-spacing:.03em}
+/* 見出しは単語（文節）単位で改行（スマホ/PC共通・語中改行を防ぐ）。
+   auto-phrase 対応ブラウザ（Chrome/Edge119+, Safari17.4+）で文節改行、非対応は通常改行にフォールバック。 */
+.page-hero h1,.hero h1,.p-info h1,.nf h1,
+.sec-title,.final-big,.story-big,.cat-card h3,.feature-card h3,.step h3,
+.article h2,.article h3,.legal-body h2{
+  line-break:strict;
+  word-break:auto-phrase;
+}
 .sec-title .en{font-family:var(--serif);font-weight:400;color:var(--gold-l)}
 .lead{font-size:clamp(.94rem,2.2vw,1.05rem);line-height:2.1;color:var(--text)}
 .lead.muted{color:var(--muted)}
