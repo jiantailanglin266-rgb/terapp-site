@@ -102,7 +102,7 @@
   }).join('');
   var header = el(
     '<header class="thdr" id="thdr">'+
-      '<a href="index.html" class="brand" aria-label="TERAPP ホーム"><img class="brand-logo" src="assets/terapp-logo.png" alt="TERAPP" width="692" height="335"></a>'+
+      '<a href="index.html" class="brand" aria-label="TERAPP ホーム"><img class="brand-logo" src="assets/terapp-logo-header.png" alt="TERAPP" width="692" height="151"></a>'+
       '<nav class="nav" aria-label="メインナビゲーション">'+navHTML+
         '<span class="nav-social" aria-label="公式SNS">'+socialLinksHTML('nav-soc')+'</span>'+
         '<a href="products.html" class="nav-cta" data-ev="purchase_click">購入する</a>'+

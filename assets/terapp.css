@@ -87,8 +87,8 @@ header.thdr.scrolled{background:rgba(8,20,16,.78);backdrop-filter:blur(18px) sat
 .brand{display:flex;align-items:center;gap:.5rem;text-decoration:none}
 .brand-mark{width:24px;height:24px;flex-shrink:0}
 .brand-name{font-family:var(--sans);font-weight:600;font-size:1.05rem;letter-spacing:.22em;color:var(--text)}
-.brand-logo{height:42px;width:auto;display:block}
-@media(max-width:560px){.brand-logo{height:36px}}
+.brand-logo{height:30px;width:auto;display:block}
+@media(max-width:560px){.brand-logo{height:24px}}
 .nav{display:flex;align-items:center;gap:1.7rem}
 .nav a{font-family:var(--sans);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .3s;position:relative}
 .nav a:not(.nav-cta)::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--gold-l);transition:width .3s var(--ease)}
