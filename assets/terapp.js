@@ -142,7 +142,7 @@
     '<footer class="tftr">'+
       '<div class="ftr-wrap">'+
         '<div class="ftr-col ftr-brand">'+
-          '<a href="index.html" class="foot-brand"><img src="assets/terapp-logo.png" alt="TERAPP" width="692" height="335"></a>'+
+          '<a href="index.html" class="foot-brand"><img src="assets/terapp-logo-header.png" alt="TERAPP" width="692" height="151"></a>'+
           '<p>目に見えない力で、毎日のコンディションを整える。テラヘルツの可能性を、美容とコンディショニングへ。</p>'+
           '<div class="ftr-social">'+socialLinksHTML()+'</div>'+
         '</div>'+

@@ -623,7 +623,7 @@ footer.tftr{background:#060f0b;color:#fff;padding:3.6rem 1.5rem 3rem;position:re
 .ftr-wrap{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:2rem}
 .ftr-col h4{font-family:var(--sans);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-l);margin-bottom:1.1rem}
 .ftr-brand .foot-brand{display:inline-block;margin-bottom:.9rem;text-decoration:none}
-.ftr-brand .foot-brand img{height:56px;width:auto;display:block}
+.ftr-brand .foot-brand img{height:38px;width:auto;display:block}
 .ftr-brand p{font-size:.8rem;color:rgba(255,255,255,.55);line-height:1.9;max-width:30ch}
 .ftr-social{display:flex;gap:.9rem;margin-top:1.2rem}
 .ftr-social a{width:36px;height:36px;border-radius:50%;border:1px solid rgba(203,168,95,.25);display:grid;place-items:center;color:rgba(233,210,154,.8);transition:all .3s}
