@@ -94,10 +94,10 @@ header.thdr.scrolled{background:rgba(8,20,16,.78);backdrop-filter:blur(18px) sat
 .nav a:not(.nav-cta)::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--gold-l);transition:width .3s var(--ease)}
 .nav a:not(.nav-cta):hover,.nav a[aria-current="page"]{color:var(--gold-l)}
 .nav a[aria-current="page"]::after,.nav a:not(.nav-cta):hover::after{width:100%}
-.nav-social{display:flex;align-items:center;gap:.85rem}
-.nav-social a{color:var(--muted);display:grid;place-items:center;transition:transform .3s,color .3s}
-.nav-social a:hover{color:var(--gold-l);transform:translateY(-2px)}
-.nav-social svg{width:17px;height:17px;display:block}
+.nav-social{display:flex;align-items:center;gap:.7rem}
+.nav-social a{display:grid;place-items:center;transition:transform .3s,filter .3s;filter:drop-shadow(0 1px 3px rgba(0,0,0,.35))}
+.nav-social a:hover{transform:translateY(-2px);filter:drop-shadow(0 3px 7px rgba(0,0,0,.45)) brightness(1.08)}
+.nav-social svg{width:20px;height:20px;display:block;border-radius:6px}
 .nav-cta{
   font-family:var(--sans);font-size:.66rem;letter-spacing:.14em;text-transform:none;font-weight:600;
   background:linear-gradient(135deg,var(--gold-l),var(--deep));color:var(--ink);
@@ -119,9 +119,10 @@ header.thdr.scrolled{background:rgba(8,20,16,.78);backdrop-filter:blur(18px) sat
 .drawer a{font-family:var(--sans);font-size:.95rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text);text-decoration:none}
 .drawer a:hover{color:var(--gold-l)}
 .drawer a.nav-cta{color:var(--ink);margin-top:.4rem}
-.drawer .dr-social{display:flex;gap:1.4rem;margin-top:1rem}
-.drawer .dr-social a{color:var(--muted)}
-.drawer .dr-social a:hover{color:var(--gold-l)}
+.drawer .dr-social{display:flex;gap:1.3rem;margin-top:1rem}
+.drawer .dr-social a{display:grid;place-items:center;transition:transform .3s,filter .3s;filter:drop-shadow(0 2px 5px rgba(0,0,0,.4))}
+.drawer .dr-social a:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.drawer .dr-social svg{width:30px;height:30px;display:block;border-radius:9px}
 
 /* ============================================================
    BACKGROUND DECOR (global, decorative, JS-injected)
@@ -625,9 +626,10 @@ footer.tftr{background:#060f0b;color:#fff;padding:3.6rem 1.5rem 3rem;position:re
 .ftr-brand .foot-brand{display:inline-block;margin-bottom:.9rem;text-decoration:none}
 .ftr-brand .foot-brand img{height:38px;width:auto;display:block}
 .ftr-brand p{font-size:.8rem;color:rgba(255,255,255,.55);line-height:1.9;max-width:30ch}
-.ftr-social{display:flex;gap:.9rem;margin-top:1.2rem}
-.ftr-social a{width:36px;height:36px;border-radius:50%;border:1px solid rgba(203,168,95,.25);display:grid;place-items:center;color:rgba(233,210,154,.8);transition:all .3s}
-.ftr-social a:hover{border-color:var(--gold-l);color:#fff}
+.ftr-social{display:flex;gap:1rem;margin-top:1.2rem}
+.ftr-social a{display:grid;place-items:center;transition:transform .3s,filter .3s;filter:drop-shadow(0 2px 6px rgba(0,0,0,.4))}
+.ftr-social a:hover{transform:translateY(-3px);filter:drop-shadow(0 5px 10px rgba(0,0,0,.5)) brightness(1.1)}
+.ftr-social svg{width:30px;height:30px;display:block;border-radius:9px}
 .ftr-social a[hidden]{display:none}
 .ftr-col ul{list-style:none;display:grid;gap:.7rem}
 .ftr-col a{font-family:var(--sans);font-size:.74rem;letter-spacing:.03em;color:rgba(255,255,255,.62);text-decoration:none;transition:color .3s}

@@ -16,9 +16,9 @@
   /* 公式SNS。URLはここに入れるだけで全ページのアイコンが有効化される。
      未設定（空文字）の間は「準備中」リンク(#)として表示される。架空URLは入れない。 */
   var SOCIAL = {
-    instagram: '',   // 例: 'https://www.instagram.com/xxxx'  (NEXT_PUBLIC_INSTAGRAM_URL)
-    youtube:   '',   // 例: 'https://www.youtube.com/@xxxx'   (NEXT_PUBLIC_YOUTUBE_URL)
-    tiktok:    ''    // 例: 'https://www.tiktok.com/@xxxx'    (NEXT_PUBLIC_TIKTOK_URL)
+    instagram: 'https://www.instagram.com/terapp.official/',
+    youtube:   'https://www.youtube.com/@terapp-official',
+    tiktok:    'https://www.tiktok.com/@terapp.official'
   };
   window.TERAPP_SOCIAL = SOCIAL;
 
@@ -33,9 +33,9 @@
   ];
 
   var SOCIAL_ICONS = {
-    instagram:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="18" height="18"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>',
-    tiktok:'<svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M16 3c.3 2.1 1.6 3.7 3.7 4v2.7c-1.4 0-2.7-.4-3.7-1.1v5.9a5.5 5.5 0 11-5.5-5.5c.3 0 .6 0 .9.1v2.8a2.7 2.7 0 102 2.6V3H16z"/></svg>',
-    youtube:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="18" height="18"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5"/><path d="M10 9.2l5 2.8-5 2.8z" fill="currentColor" stroke="none"/></svg>',
+    instagram:'<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><defs><radialGradient id="tk-ig" cx="0.28" cy="1.05" r="1.15"><stop offset="0" stop-color="#FBE18A"/><stop offset=".2" stop-color="#F9A03F"/><stop offset=".45" stop-color="#E4326E"/><stop offset=".7" stop-color="#B7378E"/><stop offset="1" stop-color="#5D4DD6"/></radialGradient></defs><rect x="2" y="2" width="20" height="20" rx="6" fill="url(#tk-ig)"/><rect x="6.2" y="6.2" width="11.6" height="11.6" rx="3.4" fill="none" stroke="#fff" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="#fff" stroke-width="1.5"/><circle cx="16.2" cy="7.8" r="1.05" fill="#fff"/></svg>',
+    tiktok:'<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="6" fill="#0b0b0b"/><path d="M15.4 6.2c.35 1.9 1.45 3.05 3.3 3.25v2.35c-1.05.05-2-.25-3.05-.85v4.55c0 3.05-2.35 4.9-4.85 4.9a4.65 4.65 0 01-.75-9.25v2.5a2.2 2.2 0 101.9 2.18V6.2h1.4z" fill="#25F4EE"/><path d="M16 5.6c.35 1.9 1.45 3.05 3.3 3.25v2.35c-1.05.05-2-.25-3.05-.85v4.55c0 3.05-2.35 4.9-4.85 4.9a4.65 4.65 0 01-.75-9.25v2.5a2.2 2.2 0 101.9 2.18V5.6H16z" fill="#FE2C55"/><path d="M15.7 5.9c.35 1.9 1.45 3.05 3.3 3.25v2.35c-1.05.05-2-.25-3.05-.85v4.55c0 3.05-2.35 4.9-4.85 4.9a4.65 4.65 0 01-.75-9.25v2.5a2.2 2.2 0 101.9 2.18V5.9h1.4z" fill="#fff"/></svg>',
+    youtube:'<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="1.5" y="5" width="21" height="14" rx="4.2" fill="#FF0000"/><path d="M10 8.6l6.2 3.4-6.2 3.4z" fill="#fff"/></svg>',
     x:'<svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M17.5 3h3l-6.6 7.5L21.7 21h-5.8l-4.5-5.9L6.1 21H3l7-8L2.7 3h5.9l4.1 5.4zM16.4 19.2h1.6L7.7 4.7H6z"/></svg>',
     line:'<svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 3C6.9 3 3 6.4 3 10.5c0 3.7 3.1 6.8 7.4 7.4.3.1.7.2.8.5.1.3 0 .7 0 .9l-.1.8c0 .2-.2.9.8.5s5.3-3.1 7.2-5.3c1.3-1.4 1.9-2.9 1.9-4.8C21 6.4 17.1 3 12 3z"/></svg>'
   };
