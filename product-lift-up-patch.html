@@ -90,7 +90,9 @@
 .price-card .pc-qty{font-family:var(--sans);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:.6rem 0 1.2rem}
 .price-card .pc-price{font-family:var(--jp-serif);font-weight:600;font-size:2.4rem;color:var(--gold-l);line-height:1}
 .price-card .pc-price small{font-size:1rem;font-weight:400;margin-left:.2rem}
-.price-card .pc-cta{margin-top:1.8rem;width:100%}
+.price-card .pc-ship{display:inline-flex;align-items:center;gap:.35em;margin-top:1rem;font-family:var(--sans);font-size:.66rem;font-weight:600;letter-spacing:.12em;color:var(--deep);background:rgba(203,168,95,.14);border:1px solid rgba(203,168,95,.4);border-radius:50px;padding:.34rem .9rem}
+.price-card .pc-ship::before{content:"";width:.5em;height:.5em;border-radius:50%;background:var(--gold)}
+.price-card .pc-cta{margin-top:1.4rem;width:100%}
 .sticky-bar{position:fixed;left:0;right:0;bottom:0;z-index:100;display:none;align-items:center;gap:.8rem;padding:.7rem 1rem calc(.7rem + env(safe-area-inset-bottom));background:rgba(8,20,16,.92);backdrop-filter:blur(14px);border-top:1px solid var(--line);box-shadow:0 -6px 24px rgba(0,0,0,.5);transition:transform .4s var(--ease)}
 .sticky-bar.hidden{transform:translateY(120%)}
 .sticky-bar .sb-info{display:flex;flex-direction:column;line-height:1.2}
@@ -124,11 +126,12 @@
         <span class="pr">1セット<b>2,200円</b></span>
         <span class="pr">3セット<b>5,500円</b></span>
       </div>
+      <p class="p-ship-note" style="margin:.2rem 0 0;font-size:.72rem;letter-spacing:.1em;font-weight:600;color:var(--deep)">🚚 全国送料無料</p>
       <div class="p-cta">
         <a href="#pricing" class="btn btn-primary" data-ev="purchase_click">購入・価格を見る</a>
         <a href="how-to-use.html" class="btn btn-ghost">使い方を見る</a>
       </div>
-      <p class="p-note">※販売単位・税込表示・送料は公開前に確定情報へ更新します。使用感や感じ方には個人差があります。</p>
+      <p class="p-note">※全国送料無料です。販売単位・税込表示は公開前に確定情報へ更新します。使用感や感じ方には個人差があります。</p>
     </div>
   </div>
 </section>
@@ -235,7 +238,7 @@
   <div class="wrap">
     <div class="sec-head center reveal"><span class="eyebrow">Pricing</span><h2 class="sec-title"><span class="en">Choose Your Beauty Routine.</span></h2><div class="s-line"></div></div>
     <div class="price-grid" id="price-grid"></div>
-    <p class="form-note" style="margin-top:1.8rem;max-width:52ch;margin-left:auto;margin-right:auto">※1セットあたりのパッチ枚数・税込区分・販売単位・送料は公開前に確定情報へ更新します。決済URLが未設定のため、現在は購入について問い合わせを承ります。</p>
+    <p class="form-note" style="margin-top:1.8rem;max-width:52ch;margin-left:auto;margin-right:auto">※全国送料無料です。1セットあたりのパッチ枚数・税込区分・販売単位は公開前に確定情報へ更新します。決済URLが未設定のため、現在は購入について問い合わせを承ります。</p>
   </div>
 </section>
 
@@ -317,6 +320,7 @@ document.addEventListener('DOMContentLoaded', function(){
       (p.recommended?'<span class="price-badge">おすすめ</span>':'')+
       '<span class="pc-name">'+p.name+'</span><span class="pc-qty">'+p.qty+'</span>'+
       '<span class="pc-price">'+p.price.toLocaleString('ja-JP')+'<small>円</small></span>'+
+      '<span class="pc-ship">全国送料無料</span>'+
       '<a class="btn btn-primary pc-cta" href="'+href+'" data-ev="'+p.ev+'">'+label+'</a></div>');
   });
   grid && grid.querySelectorAll('.reveal').forEach(function(el){ if(!reduce) return; el.classList.add('in'); });
